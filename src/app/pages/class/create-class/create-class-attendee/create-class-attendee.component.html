@@ -1,0 +1,69 @@
+<p-panel header="Attendee" [toggleable]="true">
+  <ng-template pTemplate="icons">
+    <p-menu #menu id="config_menu" [popup]="true"> </p-menu>
+  </ng-template>
+  <form [formGroup]="attendeesForm" (ngSubmit)="onSubmit()" *ngIf="!viewMode">
+    <div class="time-frame-container" formGroupName="attendees">
+      <div class="planned">
+        <label for="planned-input">Planned</label>
+        <input
+          type="text"
+          id="planned-input"
+          formControlName="planned_number"
+          (change)="onSubmit()"
+        />
+      </div>
+      <div class="accepted">
+        <label for="accepted-input">Accepted</label>
+        <input
+          type="text"
+          id="accepted-input"
+          formControlName="accepted_number"
+          (change)="onSubmit()"
+        />
+      </div>
+      <div class="actual">
+        <label for="actual-input">Actual</label>
+        <input
+          type="text"
+          id="actual-input"
+          formControlName="actual_number"
+          (change)="onSubmit()"
+        />
+      </div>
+    </div>
+  </form>
+  <!-- view mode start -->
+  <div *ngIf="viewMode">
+    <div class="time-frame-container">
+      <div class="planned">
+        <label for="planned-input">Planned</label>
+        <input
+          type="number"
+          id="planned-input"
+          disabled
+          value={{attendeeInformation.plannedNumber}}
+        />
+      </div>
+      <div class="accepted">
+        <label for="accepted-input">Accepted</label>
+        <input
+          type="number"
+          id="accepted-input"
+          disabled
+          value={{attendeeInformation.acceptedNumber}}
+        />
+      </div>
+      <div class="actual">
+        <label for="actual-input">Actual</label>
+        <input
+          type="number"
+          id="actual-input"
+          disabled
+          value={{attendeeInformation.actualNumber}}
+        />
+      </div>
+    </div>
+  </div>
+  <!-- view mode end -->
+</p-panel>

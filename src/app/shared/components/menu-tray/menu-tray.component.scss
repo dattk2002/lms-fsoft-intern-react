@@ -1,0 +1,160 @@
+@mixin ani-fadein($time) {
+    animation: fadein $time;
+    -webkit-animation: fadein $time;
+
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein $time;
+
+    /* Firefox < 16 */
+    -ms-animation: fadein $time;
+
+    /* Internet Explorer */
+    -o-animation: fadein $time;
+
+    /* Opera < 12.1 */
+}
+
+:host ::ng-deep {
+    .menu-tray {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        .row {
+            .item {
+                display: flex;
+                justify-items: center;
+                align-items: center;
+                flex-direction: column;
+                outline: none;
+                text-align: center;
+                border-radius: 1.5rem;
+                margin: 2rem;
+                max-width: 350px;
+                min-height: 220px;
+                transition: box-shadow 0.3s;
+                background: #ffffff12;
+                box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+
+                @include ani-fadein(0.2s);
+
+                &:hover {
+                    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 5px 8px 0 rgb(0 0 0 / 14%), 0 1px 14px 0 rgb(0 0 0 / 12%);
+                }
+
+                a {
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    color: #000;
+
+                    &.box-blue {
+                        .p-ink {
+                            background: rgb(198 226 236 / 50%);
+                        }
+                    }
+                }
+
+                .text {
+                    padding-top: 1rem;
+
+                    p {
+                        font-weight: bold;
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .icon-container {
+                    width: 130px;
+                    height: 130px;
+                    cursor: pointer;
+                    outline: none;
+                    margin: auto;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1480px) {
+        .menu-tray {
+            .row {
+                .item {
+                    margin: 2rem;
+                    max-width: 410px;
+                    min-height: 270px;
+
+                    .icon-container {
+                        width: 140px;
+                        height: 140px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1080px) {
+        .menu-tray {
+            .row {
+                .item {
+                    margin: 2rem;
+                    max-width: 250px;
+                    min-height: 200px;
+
+                    .icon-container {
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 810px) {
+        .menu-tray {
+            .row {
+                .item {
+                    margin: 1.5rem;
+                    max-width: 190px;
+                    min-height: 180px;
+
+                    .icon-container {
+                        width: 90px;
+                        height: 90px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .menu-tray {
+            .row {
+                .item {
+                    margin: 0.8rem;
+                    max-width: 120px;
+                    min-height: 90px;
+
+                    .icon-container {
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                    .text {
+                        padding-top: 0.5rem;
+
+                        p {
+                            font-weight: bold;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

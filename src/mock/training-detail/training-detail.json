@@ -1,0 +1,35 @@
+
+
+{
+  "data": {
+    "success": true,
+    "data": {
+      "training_title": "DevOps Foundation",
+      "training_status": "Active",
+      "training_duration": {
+        "total_day": 30,
+        "total_hours": 92
+      },
+      "modified": {
+        "date": "2018-12-10T13:49:51.141Z",
+        "author": "hoang Duy"
+      },
+      "content": [
+        {
+          "id": "123",
+          "program_name": "C++",
+          "status": "Active",
+          "short_name": "LIN v2.0",
+          "duration": {
+            "total_day": 4,
+            "total_hours": 12
+          },
+          "modified": {
+            "date": "2018-12-10T13:49:51.141Z",
+            "author": "hoang Duy"
+          }
+        }
+      ]
+    }
+  }
+}

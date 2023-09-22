@@ -1,0 +1,78 @@
+<p-panel [toggleable]="true">
+  <p-header>
+    <h4 style="display: inline">Time frame</h4>
+    start date
+    <p-calendar inputId="startDate"></p-calendar>
+  </p-header>
+  <form [formGroup]="time_frame_form" (ngSubmit)="onSubmit()" *ngIf="!viewMode">
+    <div
+      class="time-frame-container p-field p-col-12 p-md-4"
+      formGroupName="timeFrame"
+    >
+      <p-calendar
+        [numberOfMonths]="2"
+        formControlName="multipleMonths"
+        inputId="multiplemonths"
+        [inline]="true"
+        selectionMode="multiple"
+        [style]="{ '.ui-state-highlight': 'background-color: red;' }"
+        [(ngModel)]="selectedDates"
+        (onSelect)="onSubmit()"
+      >
+        <ng-template
+          pTemplate="date"
+          let-date
+        >
+          <span
+            id="selectedDateBlcok"
+            style="
+              border-radius: 50%;
+              padding: 0.25em;
+              width: 2em;
+              height: 2em;
+              display: block;
+            "
+            >{{ date.day }}</span
+          >
+          <div style="width: 20px;"></div>
+        </ng-template>
+      </p-calendar>
+    </div>
+  </form>
+  <!-- view mode start -->
+  <div *ngIf="viewMode">
+    <div
+      class="time-frame-container p-field p-col-12 p-md-4"
+    >
+      <p-calendar
+        [numberOfMonths]="2"
+        inputId="multiplemonths"
+        [inline]="true"
+        selectionMode="multiple"
+      >
+        <ng-template
+          pTemplate="date"
+          let-date
+        >
+          <span
+            id="selectedDateBlcok"
+            [ngStyle]="{
+              backgroundColor:
+                Dates(selectedDates).includes(date.day) && Months(selectedDates).includes(date.month) ? '#2d3748' : 'inherit'
+            }"
+            style="
+              border-radius: 50%;
+              padding: 0.25em;
+              width: 4em;
+              height: 2em;
+              display: block;
+            "
+            >{{ date.day }}</span
+          >
+          <div style="width: 20px;"></div>
+        </ng-template>
+      </p-calendar>
+    </div>
+  </div>
+  <!-- view mode end -->
+</p-panel>

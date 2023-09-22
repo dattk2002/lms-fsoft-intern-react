@@ -1,0 +1,40 @@
+.outside-body-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+::ng-deep .p-tabview-nav {
+  background: none !important;
+  border: none !important;
+  li {
+    display: flex;
+    a:hover {
+      background-color: var(--black) !important;
+    }
+  }
+}
+
+::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  display: inline-block;
+  text-align: center;
+  min-width: 200px;
+  background: #6d7684;
+  border: 1px solid white;
+  border-radius: 20px 20px 0px 0px !important;
+  padding: 10px 20px !important;
+
+  span {
+    color: white;
+    text-align: center;
+  }
+}
+
+::ng-deep .ng-star-inserted .p-highlight {
+  a {
+    background: var(--black) !important;
+  }
+}
+
+::ng-deep .p-tabview .p-tabview-panels {
+  background-color: var(--black);
+  border-radius: 0px 20px 20px 20px;
+}

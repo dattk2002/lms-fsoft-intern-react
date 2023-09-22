@@ -1,0 +1,35 @@
+<div class="general-container">
+  <div class="level-technical">
+    <div class="level">
+      <div class="mini-level">
+       <i class="icon: pi pi-star"> </i>
+        <div class="text-all1">Level</div>
+        <div class="text-all">{{ general.level }}</div>
+      </div>
+      <div class="mini-level">
+        <i class="icon: pi pi-users"> </i>
+        <div class="text-all1">Attendee number</div>
+        <div>{{ general.attendeenumberPercent }}</div>
+      </div>
+      <div class="mini-level">
+        <i class="icon: pi pi-shield"> </i>
+        <div class="text-all1">Output standard</div>
+        <p-tag styleClass="tag1" value="{{ general.outputStandard }}"> </p-tag>
+      </div>
+    </div>
+    <div class="technical">
+      <div class="mini-technical">
+        <i class=" icon: fa-solid fa-gear"></i>
+        <div class="text-all1">Technical Requirement(s)</div>
+      </div>
+      <div class="text-box">{{ general.technicalRequirements }}</div>
+    </div>
+  </div>
+  <div class="cousera">
+    <div class="mini-cousera">
+      <i class=" icon: fa-solid fa-expand"></i>
+      <div class="text-all1">Course objectives</div>
+    </div>
+    <div class="cousera-box">{{ general.courseObjectives }}</div>
+  </div>
+</div>

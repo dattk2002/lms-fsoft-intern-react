@@ -1,0 +1,159 @@
+<div class="container-import">
+  <div class="popup-user">
+    <!-- frame8755 Header import -->
+    <div class="header-import">
+      <div class="text-header-import">Import Users</div>
+    </div>
+    <form
+      class="filter-form"
+      action=""
+      [formGroup]="importForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="body-import-1">
+        <div class="text-body-import-1">Import setting</div>
+
+        <div class="body-import-row">
+          <div class="body-import-row-1">
+            <div class="text-body-import-row-1">
+              <div class="file">File (csv)*</div>
+            </div>
+
+            <div class="card flex justify-content-center">
+              <p-toast></p-toast>
+              <p-fileUpload
+                #fileImport
+                mode="basic"
+                chooseLabel="Choose"
+                name="file"
+                url="https://deploy-fa-training.azurewebsites.net/api/TrainingClass/ImportTrainingClass"
+                accept=".xlsx"
+                (onUpload)="myUploader($event)"
+                (onSend)="uploadError($event)"
+              ></p-fileUpload>
+            </div>
+          </div>
+          <div class="body-import-row-2">
+            <!-- frame 8760 -->
+            <div class="text-body-import-row-2">
+              <div class="encoding-type">Encoding type</div>
+            </div>
+            <!-- frame 8708 -->
+            <p-multiSelect
+              [options]="type"
+              formControlName="selectedTypes"
+              defaultLabel="Auto Detect"
+              optionLabel="name"
+              display="chip"
+              class="p-multiSelect"
+            >
+            </p-multiSelect>
+          </div>
+          <div class="body-import-row-3">
+            <!-- frame 8760 -->
+            <div class="text-body-import-row-3">
+              <div class="column-seperator">Column seperator</div>
+            </div>
+            <!-- frame 8708 -->
+            <p-multiSelect
+              [options]="seperator"
+              formControlName="selectedSeperators"
+              defaultLabel="By Commat"
+              optionLabel="name"
+              display="chip"
+              class="p-multiSelect"
+            >
+            </p-multiSelect>
+          </div>
+          <div class="body-import-row-4">
+            <!-- frame 8760 -->
+            <div class="text-body-import-row-4">
+              <!-- frame 8761 -->
+              <div class="import-template">Import template</div>
+            </div>
+            <!-- frame 8760 -->
+            <div class="link">
+              <a
+                href="https://storefilefatraining.blob.core.windows.net/rootcontainer/TemplateContainer/TrainingClassTemplate.xlsx"
+                class="text-link"
+                >Download</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr" />
+      <div class="body-import-2">
+        <div class="text-body-import-2">Duplicate control</div>
+
+        <div class="body-import-column">
+          <!-- frame 8758 -->
+          <div class="body-import-column-1">
+            <!-- frame 8760 -->
+            <div class="text-body-iport-column-1">
+              <div class="scanning">Scanning</div>
+            </div>
+            <div class="body-import-column-checkbox-group">
+              <div *ngFor="let scan of scans">
+                <div class="checkbox-1">
+                  <p-checkbox
+                    class="check-box-1"
+                    formControlName="selectedScan"
+                    name="{{ scan.value }}"
+                    value="{{ scan.value }}"
+                    inputId="name or mail"
+                  ></p-checkbox>
+                  <label for="name or mail">{{ scan.value }}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="body-import-column-2">
+            <div class="text-body-iport-column-2">
+              <div class="duplicate-handle">Duplicate handle</div>
+            </div>
+            <div class="body-import-column-radio-group">
+              <div *ngFor="let category of categories" class="radio-1">
+                <p-radioButton
+                  class="ra-dio-1"
+                  [inputId]="category.key"
+                  name="selectedDuplicate"
+                  formControlName="selectedDuplicate"
+                  [value]="category"
+                  [(ngModel)]="selectedCategory"
+                ></p-radioButton>
+                <label [for]="category.key">{{ category.name }}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr-1" />
+      <div class="footer-import">
+        <div class="button-1">
+          <div class="cancel">
+            <p-button
+              label="Cancel"
+              (click)="onReset(); fileImport.clear()"
+            ></p-button>
+          </div>
+        </div>
+        <div class="button-2">
+          <div class="import">
+            <p-button
+              (click)="submitImport($event); fileImport.upload()"
+              label="Import"
+            ></p-button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <p id="testing-request-json"></p>
+</div>
+<p-messages
+  [(value)]="messages"
+  [enableService]="false"
+  [closable]="true"
+></p-messages>

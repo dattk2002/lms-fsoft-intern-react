@@ -1,0 +1,101 @@
+{
+  "status": "success",
+  "data": {
+    "class_id": "Class01",
+    "date_order": {
+      "current": 10,
+      "total": 31
+    },
+    "class_unit": 6,
+    "class_name": "React_03",
+    "class_code": "FA_01",
+    "class_status": "Planning",
+    "class_duration": {
+      "total_day": 30,
+      "total_hours": 92
+    },
+    "delivery_type": {
+      "level": "senior",
+      "program": "Workshops"
+    },
+    "general": {
+      "class_time": {
+        "start-time": "HH:MM XM",
+        "end-time": "HH:MM XM"
+      },
+      "location": "Ftown1",
+      "trainer": {
+        "trainer_id": "trainer01",
+        "name": "Nguyen Trung Thong",
+        "phone": "0908999999",
+        "email": "thongntse160850@fpt.edu.vn",
+        "avatars_url": "https://gravatar.com/avatar/028835899d4a0befbb44c0dd2089cf4d?s=400&d=robohash&r=x"
+      },
+      "admin": {
+        "admin_id": "admin01",
+        "name": "Nguyen Trung Thong",
+        "phone": "0908999999",
+        "email": "thongntse160850@fpt.edu.vn"
+      },
+      "FSU": "something here",
+      "created": {
+        "date": "2018-12-10T13:49:51.141Z",
+        "author": "ThongNT"
+      },
+      "review": {
+        "date": "2018-12-10T13:49:51.141Z",
+        "author": "ThongNT"
+      },
+      "approve": {
+        "date": "2018-12-10T13:49:51.141Z",
+        "author": "ThongNT"
+      }
+    },
+    "time_frame": {
+      "start_date": "2018-12-10T13:49:51.141Z",
+      "end_date": "2018-12-10T13:49:51.141Z",
+      "month": "11",
+      "year": "2019",
+      "highlighted_dates": [
+        "2018-12-10T13:49:51.141Z",
+        "2018-12-11T13:49:51.141Z"
+      ]
+    },
+    "attendees": {
+      "attendee_id": "Attendee01",
+      "student_type": "Fresher",
+      "planned_number": 10,
+      "accepted_number": 9,
+      "actual_number": 9
+    },
+    "training_programs": {
+      "program_id": "Prog01",
+      "program_name": "DevOps Foundation",
+      "program_duration": {
+        "total_day": 30,
+        "total_hours": 92
+      },
+      "last_edit": {
+        "date": "2018-12-10T13:49:51.141Z",
+        "author": "ThongNT"
+      },
+      "syllabuses": [
+        {
+          "syllabus_id": "Syl01",
+          "trainer_avatars_url": [{}],
+          "syllabus_name": "Linux",
+          "syllabus_status": "active",
+          "syllabus_short_name": "LIN v2.0",
+          "syllabus_duration": {
+            "total_day": 30,
+            "total_hours": 92
+          },
+          "last_edit": {
+            "date": "2018-12-10T13:49:51.141Z",
+            "author": "ThongNT"
+          }
+        }
+      ]
+    }
+  }
+}

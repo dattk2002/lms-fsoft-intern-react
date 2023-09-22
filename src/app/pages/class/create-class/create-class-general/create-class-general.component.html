@@ -1,0 +1,169 @@
+<p-panel id="create-class-general-panel" header="General" [toggleable]="true">
+  <ng-template pTemplate="icons">
+    <p-menu #menu id="config_menu" [popup]="true"></p-menu>
+  </ng-template>
+  <div class="general-container">
+    <div class="container-top">
+      <div class="title-container">
+        <!-- icon -->
+        <label for="time-input">Time</label>
+        <!-- icon -->
+        <label for="location-input">Location</label>
+        <!-- icon -->
+        <label for="trainer-input">Trainer</label>
+        <div *ngIf="viewMode">
+          <div
+            class=""
+            style="opacity: 0"
+            *ngFor="
+              let trainer of generalInformation.trainer;
+              let first = first
+            "
+            [ngClass]="{ first: first }"
+          >
+            <span>{{ trainer }}</span>
+          </div>
+        </div>
+
+        <!-- icon -->
+        <label for="admin-input">Admin</label>
+        <div *ngIf="viewMode">
+          <div
+            class=""
+            style="opacity: 0"
+            *ngFor="let admin of generalInformation.admin; let first = first"
+            [ngClass]="{ first: first }"
+          >
+            <span>{{ admin }}</span>
+          </div>
+        </div>
+
+        <!-- icon -->
+        <label for="fsu-input">FSU</label>
+      </div>
+      <form
+        class="input-container"
+        [formGroup]="generalInputForm"
+        (ngSubmit)="onSubmit()"
+        *ngIf="!viewMode"
+      >
+        <div formGroupName="general">
+          <div class="time-input" formGroupName="class_time">
+            from
+            <p-calendar
+              [timeOnly]="true"
+              inputId="timeonly"
+              placeholder="--:--"
+              formControlName="start_time"
+              (onChange)="onSubmit()"
+            ></p-calendar>
+            to
+            <p-calendar
+              [timeOnly]="true"
+              inputId="timeonly"
+              placeholder="--:--"
+              formControlName="end_time"
+              (onChange)="onSubmit()"
+            ></p-calendar>
+          </div>
+          <div class="location-input"></div>
+          <div class="trainer-input"></div>
+          <div class="admin-input">
+            <p-multiSelect
+              [options]="admins"
+              formControlName="admins"
+              defaultLabel="Select"
+              optionLabel="name"
+              display="chip"
+              (onChange)="onSubmit()"
+            >
+            </p-multiSelect>
+          </div>
+          <div class="fsu-input">
+            <p-multiSelect
+              [options]="fsu"
+              formControlName="fsu"
+              defaultLabel="Select"
+              optionLabel="name"
+              display="chip"
+              (onChange)="onSubmit()"
+            >
+            </p-multiSelect>
+            <p-multiSelect
+              [options]="fsu"
+              formControlName="selectedFsuContact"
+              defaultLabel="Contact point"
+              optionLabel="email"
+              display="chip"
+              (onChange)="onSubmit()"
+            >
+            </p-multiSelect>
+          </div>
+        </div>
+      </form>
+      <!-- Start view mode for view Class Detail -->
+      <div class="input-container" *ngIf="viewMode">
+        <div class="input-container-viewmode">
+          <div class="time-input">
+            from
+            {{
+              generalInformation.general.class_date.startDate | date : "hh:mm"
+            }}
+            to
+            {{ generalInformation.general.class_date.endDate | date : "hh:mm" }}
+          </div>
+          <div class="location-input">
+            {{ generalInformation.location }}
+          </div>
+          <div class="trainer-input">
+            <div *ngFor="let trainer of generalInformation.trainer">
+              <a href="#">{{ trainer.name }}</a>
+            </div>
+          </div>
+          <div class="admin-input">
+            <div *ngFor="let admin of generalInformation.admin">
+              <a href="#">{{ admin.name }}</a>
+            </div>
+          </div>
+          <div class="fsu-input">
+            {{ generalInformation.fsu }}
+          </div>
+        </div>
+      </div>
+      <!-- End view mode -->
+    </div>
+    <div class="container-bottom">
+      <div class="title-container">
+        <div class="time">
+          <!-- icon -->
+          <label for="created">Created</label>
+          <!-- icon -->
+          <label for="review">Review</label>
+          <!-- icon -->
+          <label for="approve">Approve</label>
+        </div>
+      </div>
+      <div class="input-container">
+        <div class="title-container"></div>
+        <div class="value-container"></div>
+      </div>
+      <!-- Start view mode -->
+      <div class="input-container" *ngIf="viewMode">
+        <div class="created-container" style="min-height: 34.5px">
+          <p style="margin: 0px; padding-top: 6px;">
+            {{ generalInformation.created.creationDate | date : "dd/MM/YYYY" }}
+            by
+            {{ generalInformation.created.userName }}
+          </p>
+        </div>
+        <div class="review-container" style="min-height: 34.5px">
+          <p style="margin: 0px; padding-top: 6px;">
+            {{ generalInformation.review.reviewDate | date : "dd/MM/YYYY" }} by
+            {{ generalInformation.review.author }}
+          </p>
+        </div>
+      </div>
+      <!-- End view mode -->
+    </div>
+  </div>
+</p-panel>

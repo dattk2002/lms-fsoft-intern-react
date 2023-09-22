@@ -1,0 +1,59 @@
+<!-- Header -->
+<div class="outside-body-container">
+  <div class="syllabus-detail-container">
+    <h1 class="h1">Syllabus</h1>
+    <div class="code-container">
+      <div class="total">
+        <h1>{{ SyllabusDetails.syllabusName }}</h1>
+      </div>
+      <div class="button-active">
+        <button class="button">{{ SyllabusDetails.status }}</button>
+      </div>
+      <div class="button-more">
+        <button pButton type="button" class="button-more" (click)="menu.toggle($event)">
+          <i class="fa-solid fa-ellipsis"></i>
+        </button>
+      </div>
+      <p-menu #menu [model]="items" [popup]="true"></p-menu>
+    </div>
+    <div class="code-syllabus">{{ SyllabusDetails.code }}</div>
+    <hr />
+    <div class="title-mid">
+      <div class="mid-number">
+        <div class="mid-day">
+          <div class="number">
+            {{ SyllabusDetails.durations.totalDate }} days
+          </div>
+        </div>
+        <div class="time">
+          ({{ SyllabusDetails.durations.totalHours }} hours)
+        </div>
+      </div>
+      <div class="modify">
+        Modified on {{ SyllabusDetails.createdOn }} by
+        {{ SyllabusDetails.createBy }}
+      </div>
+    </div>
+  </div>
+  <div class="panel-containercontainer">
+    <p-tabView>
+      <p-tabPanel header=" General">
+        <app-syllabus-detail-general
+          [general]="SyllabusDetails.general"
+        ></app-syllabus-detail-general>
+      </p-tabPanel>
+      <p-tabPanel header=" Outline">
+        <app-syllabus-detail-outline
+          [outlineSyllabusDTO]="SyllabusDetails.outlineSyllabusDTO"
+          [timeAllocationDTO]="SyllabusDetails.timeAllocationDTO"
+        ></app-syllabus-detail-outline>
+      </p-tabPanel>
+      <p-tabPanel header=" Others">
+        <app-syllabus-detail-others
+          [otherSyllabusDTOOther]="SyllabusDetails.otherSyllabusDTOOther"
+          [timeAllocationDTO]="SyllabusDetails.timeAllocationDTO"
+        ></app-syllabus-detail-others>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</div>

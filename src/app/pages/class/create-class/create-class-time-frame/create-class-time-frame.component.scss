@@ -1,0 +1,31 @@
+:host ::ng-deep .ng-tns-c60-7 {
+  border: 0px;
+}
+
+:host ::ng-deep .p-panel-content {
+  display: flex;
+  justify-content: center;
+}
+
+:host ::ng-deep .p-highlight {
+  background-color: var(--black) !important;
+  color: white !important;
+}
+
+:host ::ng-deep .p-datepicker {
+  padding: 0.5rem;
+  color: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+}
+
+::ng-deep .p-calendar .p-inputtext {
+  max-height: 27px;
+}
+
+:host ::ng-deep .p-panel-header {
+  background-color: var(--black);
+  color: white;
+  border-radius: 10px;
+  max-height: 40px;
+}

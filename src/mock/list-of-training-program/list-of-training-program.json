@@ -1,0 +1,100 @@
+{
+  "data": {
+    "success": true,
+    "data": [
+      {
+        "id": "1",
+        "trainingTitle": "C++",
+        "creationDate": "9/2/2023",
+        "createdBy": "hoangduy",
+        "duration": "7days",
+        "status": "Inactive"
+      },
+      {
+        "id": "2",
+        "trainingTitle": "C++",
+        "creationDate": "9/2/2023",
+        "createdBy": "hoangduy",
+        "duration": "7days",
+        "status": "Active"
+      },
+      {
+        "id": "3",
+        "trainingTitle": "a++",
+        "creationDate": "9/2/2023",
+        "createdBy": "hoangduy",
+        "duration": "7days",
+        "status": "Active"
+      },
+      {
+        "id": "4",
+        "trainingTitle": "b++",
+        "creationDate": "9/2/2023",
+        "createdBy": "hoangduy",
+        "duration": "7days",
+        "status": "Active"
+      },
+      {
+        "id": "5",
+        "trainingTitle": "d++",
+        "creationDate": "9/2/2023",
+        "createdBy": "hoangduy",
+        "duration": "7days",
+        "status": "Active"
+      },
+      {
+        "id": "6",
+        "trainingTitle": "f++",
+        "creationDate": "9/2/2023",
+        "createdBy": "hoangduy",
+        "duration": "7days",
+        "status": "Active"
+      }
+    ]
+  },
+  "detail": {
+    "trainingProgramId": "70861572-53a1-4a7a-84ea-56ebbed4c768",
+    "trainingTitle": "Chương trình SQL sơ cấp",
+    "trainingStatus": "Active",
+    "trainingDuration": {
+      "totalDate": 15,
+      "totalHours": 120
+    },
+    "modified": {
+      "date": "2023-02-28T01:59:20.3066667",
+      "author": "273ffa05-8c05-495c-8c8c-42ac70d9a76c"
+    },
+    "createByUserName": null,
+    "createdBy": "273ffa05-8c05-495c-8c8c-42ac70d9a76c",
+    "contents": [
+      {
+        "id": "e117d7cd-b8c2-4ef1-a6a2-3013300a98ce",
+        "status": "Active",
+        "syllabusName": "Advanced Cross-Platform Application Programming With .NET",
+        "syllabusDuration": "4 days (12hours)",
+        "modified": "Modified on 23/07/2022 by Johny Deep"
+      },
+      {
+        "id": "e117d7cd-b8c2-4ef1-a6a2-3013300a98ce",
+        "status": "Active",
+        "syllabusName": "Advanced Cross-Platform Application Programming With .NET",
+        "syllabusDuration": "4 days (12hours)",
+        "modified": "Modified on 23/07/2022 by Johny Deep"
+      },
+      {
+        "id": "e117d7cd-b8c2-4ef1-a6a2-3013300a98ce",
+        "status": "Active",
+        "syllabusName": "Advanced Cross-Platform Application Programming With .NET",
+        "syllabusDuration": "4 days (12hours)",
+        "modified": "Modified on 23/07/2022 by Johny Deep"
+      },
+      {
+        "id": "e117d7cd-b8c2-4ef1-a6a2-3013300a98ce",
+        "status": "Inactive",
+        "syllabusName": "Advanced Cross-Platform Application Programming With .NET",
+        "syllabusDuration": "4 days (12hours)",
+        "modified": "Modified on 23/07/2022 by Johny Deep"
+      }
+    ]
+  }
+}

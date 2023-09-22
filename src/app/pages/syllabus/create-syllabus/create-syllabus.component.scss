@@ -1,0 +1,152 @@
+// ::ng-deep #p-tabpanel-0-label {
+//   box-sizing: border-box;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 0px;
+//   gap: 20px;
+//   position: absolute;
+//   width: 200px;
+//   height: 30px;
+//   left: 0px;
+//   top: 0px;
+//   background: #2d3748;
+//   border: 1px solid #ffffff;
+//   border-radius: 20px 20px 0px 0px;
+// }
+// ::ng-deep #p-tabpanel-1-label {
+//   box-sizing: border-box;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 10px 20px 10px 30px;
+//   gap: 40px;
+//   position: absolute;
+//   width: 200px;
+//   height: 30px;
+//   left: 190px;
+//   top: 0px;
+//   background: #6d7684;
+//   border: 1px solid #ffffff;
+//   border-radius: 20px 20px 0px 0px;
+// }
+// ::ng-deep .p-tabview .p-tabview-nav {
+//   background: #f7f7f7;
+//   border: 1px solid #dee2e6;
+//   border-width: 0 0 2px 0;
+//   padding-bottom: 30px;
+// }
+// ::ng-deep #p-tabpanel-2-label {
+//   box-sizing: border-box;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 10px 20px 10px 30px;
+//   gap: 40px;
+//   position: absolute;
+//   width: 200px;
+//   height: 30px;
+//   left: 380px;
+//   top: 0px;
+//   background: #6d7684;
+//   border: 1px solid #ffffff;
+//   border-radius: 20px 20px 0px 0px;
+// }
+// ::ng-deep .p-tabview-title {
+//   width: 59px;
+//   height: 19px;
+//   font-family: "Inter";
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 16px;
+//   line-height: 19px;
+//   color: #ffffff;
+// }
+
+::ng-deep .p-tabview-nav {
+  background: none !important;
+  border: none !important;
+  li {
+    display: flex;
+    a:hover {
+      background-color: var(--black) !important;
+    }
+  }
+}
+
+::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  display: inline-block;
+  text-align: center;
+  min-width: 200px;
+  background: #6d7684;
+  border: 1px solid white;
+  border-radius: 20px 20px 0px 0px !important;
+  padding: 10px 20px !important;
+
+  span {
+    color: white;
+    text-align: center;
+  }
+}
+
+::ng-deep .ng-star-inserted .p-highlight {
+  a {
+    background: var(--black) !important;
+  }
+}
+
+::ng-deep .p-tabview .p-tabview-panels {
+  background-color: white;
+  border-radius: 0px 20px 20px 20px;
+}
+.syllabus-detail-container {
+  display: inline-flex;
+  justify-content: space-between;
+  min-width: 35rem;
+
+  .title {
+    max-width: 50%;
+    margin: 0;
+    margin-left: 30px;
+  }
+  .progress {
+    margin: 0;
+    max-width: 50%;
+  }
+}
+.container {
+  display: flex;
+  margin-left: -70px;
+
+
+
+  .NPL{
+    font-family: 'Inter';
+    font-style: normal;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    color: #000000;
+
+
+  }
+  .Ver{
+    font-family: 'Inter';
+    font-style: normal;
+    margin-top: 20px;
+    margin-left: 100px;
+    color: #000000;
+
+  }
+
+}
+::ng-deep .button{
+  background: #2d3748;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 25px;
+}

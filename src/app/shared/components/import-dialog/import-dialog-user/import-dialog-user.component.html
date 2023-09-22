@@ -1,0 +1,150 @@
+<div class="container-import">
+  <div class="popup-user">
+    <!-- frame8755 Header import -->
+    <div class="header-import">
+      <div class="text-header-import">Import Users</div>
+    </div>
+    <!-- frame8762 body import 1 -->
+    <div class="body-import-1">
+      <div class="text-body-import-1">Import setting</div>
+      <!-- frame 8761 -->
+      <div class="body-import-row">
+        <!-- frame 8711 -->
+        <div class="body-import-row-1">
+          <!-- frame 8760 -->
+          <div class="text-body-import-row-1">
+            <div class="file">File (csv)*</div>
+          </div>
+          <!-- frame 8707 -->
+          <div>
+            <button
+              pButton
+              type="button"
+              label="Select"
+              class="button-select"
+            ></button>
+          </div>
+        </div>
+        <!-- frame 8754 -->
+        <div class="body-import-row-2">
+          <!-- frame 8760 -->
+          <div class="text-body-import-row-2">
+            <div class="encoding-type">Encoding type</div>
+          </div>
+          <!-- frame 8708 -->
+          <p-cascadeSelect
+            placeholder="Auto detect"
+            styleClass="autoDetect"
+          ></p-cascadeSelect>
+        </div>
+        <!-- frame 8756 -->
+        <div class="body-import-row-3">
+          <!-- frame 8760 -->
+          <div class="text-body-import-row-3">
+            <div class="column-seperator">Column seperator</div>
+          </div>
+          <!-- frame 8708 -->
+          <p-cascadeSelect
+            placeholder="Comman"
+            styleClass="autoDetect"
+          ></p-cascadeSelect>
+        </div>
+        <!-- frame 8755 -->
+        <div class="body-import-row-4">
+          <!-- frame 8760 -->
+          <div class="text-body-import-row-4">
+            <!-- frame 8761 -->
+            <div class="import-template">Import template</div>
+          </div>
+          <!-- frame 8760 -->
+          <div class="link">
+            <a href="#" class="text-link">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="hr" />
+    <!-- frame 8763 -->
+    <div class="body-import-2">
+      <div class="text-body-import-2">Duplicate control</div>
+      <!-- frame 8761 -->
+      <div class="body-import-column">
+        <!-- frame 8758 -->
+        <div class="body-import-column-1">
+          <!-- frame 8760 -->
+          <div class="text-body-iport-column-1">
+            <div class="scanning">Scanning</div>
+          </div>
+          <div class="body-import-column-checkbox-group">
+            <div class="checkbox-1">
+              <p-checkbox
+                class="check-box-1"
+                value="Fullname"
+                inputId="fn"
+              ></p-checkbox>
+              <label for="fn" class="fullname">Fullname</label>
+            </div>
+            <div class="checkbox-2">
+              <p-checkbox
+                class="check-box-2"
+                value="User email"
+                inputId="ue"
+              ></p-checkbox>
+              <label for="ue" class="user-email">User email</label>
+            </div>
+          </div>
+        </div>
+        <!-- frame 8757 -->
+        <div class="body-import-column-2">
+          <div class="text-body-iport-column-2">
+            <div class="duplicate-handle">Duplicate handle</div>
+          </div>
+          <div class="body-import-column-radio-group">
+            <div class="radio-1">
+              <p-radioButton
+                name="radio"
+                value="Allow"
+                inputId="al"
+                class="ra-dio-1"
+              ></p-radioButton>
+              <label for="al" class="allow">Allow</label>
+            </div>
+            <div class="radio-2">
+              <p-radioButton
+                name="radio"
+                value="Replace"
+                inputId="rp"
+                class="ra-dio-2"
+              ></p-radioButton>
+              <label for="rp" class="replace">Replace</label>
+            </div>
+            <div class="radio-3">
+              <p-radioButton
+                name="radio"
+                value="Skip"
+                inputId="sk"
+                class="ra-dio-3"
+              ></p-radioButton>
+              <label for="sk" class="skip">Skip</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="hr-1" />
+    <!-- footer -->
+    <div class="footer-import">
+      <div class="button-1">
+        <div class="cancel"><a href="#">Cancel</a></div>
+      </div>
+      <div>
+        <button
+          pButton
+          type="button"
+          label="Import"
+          class="button-import"
+        ></button>
+      </div>
+    </div>
+  </div>
+</div>

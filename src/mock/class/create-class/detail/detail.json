@@ -1,0 +1,102 @@
+{
+  "classId": "Class01",
+  "dateOrder": {
+    "current": 10,
+    "total": 31
+  },
+  "className": "React_03",
+  "classNode": "FA_01",
+  "classNtatus": "Planning",
+  "classDuration": {
+    "totalDay": 30,
+    "totalHours": 92
+  },
+  "general": {
+    "classTime": {
+      "startTime": "HH:MM XM",
+      "endTime": "HH:MM XM"
+    },
+    "location": "Ftown1",
+    "trainer": [
+      {
+        "trainerId": "trainer01",
+        "name": "Nguyen Trung Thong",
+        "phone": "0908999999",
+        "email": "thongntse160850@fpt.edu.vn"
+      }
+    ],
+    "admin": [
+      {
+        "adminId": "admin01",
+        "name": "Nguyen Trung Thong",
+        "phone": "0908999999",
+        "email": "thongntse160850@fpt.edu.vn"
+      }
+    ],
+    "fsu": "something here",
+    "created": {
+      "date": "2018-12-10T13:49:51.141Z",
+      "author": "ThongNT"
+    },
+    "review": {
+      "date": "2018-12-10T13:49:51.141Z",
+      "author": "ThongNT"
+    }
+  },
+  "attendeesDetail": {
+    "attendee": "Fresher",
+    "plannedNumber": 10,
+    "acceptedNumber": 9,
+    "actualNumber": 9
+  },
+  "trainingPrograms": {
+    "programId": "Prog01",
+    "programName": "DevOps Foundation",
+    "programDuration": {
+      "totalDay": 30,
+      "totalHours": 92
+    },
+    "lastEdit": {
+      "date": "2018-12-10T13:49:51.141Z",
+      "author": "ThongNT"
+    },
+    "syllabuses": [
+      {
+        "syllabusId": "Syl01",
+        "trainerAvatarsUrl": [
+          "https://gravatar.com/avatar/028835899d4a0befbb44c0dd2089cf4d?s=400&d=robohash&r=x",
+          "https://gravatar.com/avatar/f80e20b13b1f8162220ea1b0f8724587?s=400&d=robohash&r=x"
+        ],
+        "syllabusName": "Linux",
+        "syllabusStatus": "active",
+        "syllabusShortName": "LIN v2.0",
+        "syllabusDuration": {
+          "totalDay": 30,
+          "totalHours": 92
+        },
+        "lastEdit": {
+          "date": "2018-12-10T13:49:51.141Z",
+          "author": "ThongNT"
+        }
+      },
+      {
+        "syllabusId": "Syl02",
+        "trainerAvatarsUrl": [
+          "https://gravatar.com/avatar/028835899d4a0befbb44c0dd2089cf4d?s=400&d=robohash&r=x",
+          "https://gravatar.com/avatar/f80e20b13b1f8162220ea1b0f8724587?s=400&d=robohash&r=x"
+        ],
+        "syllabusName": "AWS Basic",
+        "syllabusStatus": "inactive",
+        "syllabusShortName": "AWB v1.0",
+        "syllabusDuration": {
+          "totalDay": 4,
+          "totalHours": 21
+        },
+        "lastEdit": {
+          "date": "2018-12-10T13:49:51.141Z",
+          "author": "ThongNT"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,235 @@
+<div class="frame">
+  <div class="program-detail">
+    <div class="component"></div>
+    <hr />
+    <div class="content">
+      <div class="frame88">Content</div>
+      <p-pickList
+        [source]="sourceSyllabus.contents"
+        [dragdrop]="true"
+        [responsive]="true"
+      >
+        <ng-template let-syllabus pTemplate="item">
+          <ng-container class="syllabus">
+            <div class="frame5">
+              <div class="frame16">
+                <div class="group8"></div>
+              </div>
+              <div
+                class="syllabuss"
+                *ngIf="syllabus.status === 'Active'; else inactiveSyllabus"
+              >
+                <div class="cointainer">
+                  <span class="linux" style="white-space: nowrap">{{
+                    syllabus.syllabusName
+                  }}</span>
+                  <button
+                    *ngIf="syllabus.status === 'Active'"
+                    class="active-button"
+                    (click)="changeStatus(syllabus)"
+                  >
+                    Active
+                  </button>
+                </div>
+                <br />
+                <div class="lin">
+                  <span class="lin">{{ syllabus.detail }}</span>
+                  <span class="lin"
+                    >{{ syllabus.syllabusDuration.totalDate }} days ({{
+                      syllabus.syllabusDuration.totalHours
+                    }}
+                    hours)
+                  </span>
+
+                  <span class="lin">
+                    on {{ syllabus.modified.date | date : "MM/dd/yy" }} by
+                    {{ syllabus.modified.author }}</span
+                  >
+                </div>
+              </div>
+              <ng-template #inactiveSyllabus>
+                <div class="syllabus1inactive">
+                  <div class="cointainer">
+                    <span class="linux1" style="white-space: nowrap">{{
+                      syllabus.syllabusName
+                    }}</span>
+                    <button
+                      *ngIf="syllabus.status === 'Inactive'"
+                      class="inactive-button"
+                      (click)="changeStatus(syllabus)"
+                    >
+                      Inactive
+                    </button>
+                  </div>
+                  <br />
+                  <div class="lin1">
+                    <span class="lin1">{{ syllabus.detail }}</span>
+                    <span class="lin1"
+                      >{{ syllabus.syllabusDuration.totalDate }} days ({{
+                        syllabus.syllabusDuration.totalHours
+                      }}
+                      hours)</span
+                    >
+
+                    <span class="lin1">
+                      on {{ syllabus.modified.date | date : "MM/dd/yy" }} by
+                      {{ syllabus.modified.author }}</span
+                    >
+                  </div>
+                </div>
+              </ng-template>
+              <div class="syllabus5">
+                <button onclick="" class="delete"></button>
+                <i class="fa-solid fa-trash"></i>
+              </div>
+            </div>
+          </ng-container>
+        </ng-template>
+      </p-pickList>
+    </div>
+    <br />
+    <br />
+    <div class="frame-search">
+      <div class="add-day-button">
+        <button
+          class="add-button"
+          (click)="PositionDialog('bottom-center')"
+          styleClass="bt-success"
+        >
+          <i class="fa-solid fa-circle-plus"></i>
+          <div class="text-add">Add Syllabus</div>
+        </button>
+      </div>
+      <p-dialog
+        [(visible)]="Position"
+        [position]="addposition"
+        [modal]="true"
+        [style]="{ width: '20%', height: '30%' }"
+        [baseZIndex]="10000"
+        [draggable]="false"
+        [resizable]="false"
+      >
+        <ng-template pTemplate="header">
+          <div class="new-syllabus">New Syllabus</div>
+        </ng-template>
+        <hr />
+
+        <ng-template pTemplate="body" class="add-syllabus">
+          <form [formGroup]="profileForm1" (ngSubmit)="createsyllabus()">
+            <div class="add-syllabus">
+              <input
+                class="add-syllabus-input"
+                type="text"
+                formControlName="name"
+                placeholder="Syllabus name"
+              />
+              <div class="day-hours-input">
+                <input
+                  class="day-input"
+                  type="text"
+                  formControlName="day"
+                  placeholder="Days"
+                />
+                <div *ngIf="profileForm1.invalid">Vui lòng nhập số</div>
+                <input
+                  class="hours-input"
+                  type="text"
+                  formControlName="hours"
+                  placeholder="Hours"
+                />
+              </div>
+            </div>
+            <div class="cancel-save">
+              <button class="cancel1" (click)="Position = false">
+                <div class="text-cancel1">Cancel</div>
+              </button>
+              <button
+                type="submit"
+                class="save1"
+                [disabled]="!profileForm1.valid"
+                (click)="(Position)"
+              >
+                <div class="text-save1">Save</div>
+              </button>
+            </div>
+          </form>
+        </ng-template>
+      </p-dialog>
+      <div class="or">
+        <div>or</div>
+      </div>
+      <div class="select">
+        <div>Select</div>
+      </div>
+      <div class="parent-search">
+        <div class="search-container">
+          <form [formGroup]="profileForm" (ngSubmit)="search()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              class="search-input"
+              type="text"
+              formControlName="search"
+              placeholder=""
+            />
+            <p-button
+              type="submit"
+              class="btn btn-success"
+              [disabled]="!profileForm.valid"
+            ></p-button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="button-saving">
+      <div class="back-button">
+        <button class="back">
+          <div class="text-back">
+            <a routerLink="/class/create/add-info">Back</a>
+          </div>
+        </button>
+      </div>
+      <div class="cancel-save">
+        <button class="cancel"><div class="text-cancel">Cancel</div></button>
+        <button
+          class="save"
+          (click)="showPositionDialog('bottom-center')"
+          styleClass="bt-warning"
+        >
+          <div class="text-save">Save</div>
+        </button>
+        <p-dialog
+          [(visible)]="displayPosition"
+          [position]="position"
+          [modal]="true"
+          [style]="{ width: '20%', height: '35%' }"
+          [baseZIndex]="10000"
+          [draggable]="false"
+          [resizable]="false"
+        >
+          <ng-template pTemplate="header">
+            <div class="frame16">
+              <div class="frame15">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div class="text-problem">Required information</div>
+              </div>
+            </div>
+          </ng-template>
+          <hr />
+          <div class="frame19">
+            <div class="frame18">Trainer(s) is missing</div>
+          </div>
+          <ng-template pTemplate="footer">
+            <div class="cancel-save">
+              <button class="cancel" (click)="displayPosition = false">
+                <div class="text-cancel">Cancel</div>
+              </button>
+              <button class="save" (click)="displayPosition = false">
+                <div class="text-save">Save</div>
+              </button>
+            </div>
+          </ng-template>
+        </p-dialog>
+      </div>
+    </div>
+  </div>
+</div>

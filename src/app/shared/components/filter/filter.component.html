@@ -1,0 +1,213 @@
+<p-card class="filter-card">
+  <form
+    class="filter-form"
+    action=""
+    [formGroup]="filterForm"
+    #formDirective="ngForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="location-time">
+      <div class="class-location">
+        <h3>Class location</h3>
+        <p-multiSelect
+          [options]="cities"
+          formControlName="selectedCities"
+          defaultLabel="Select a City"
+          optionLabel="name"
+          display="chip"
+        >
+        </p-multiSelect>
+      </div>
+
+      <div class="time-frame">
+        <h3>Class time frame</h3>
+        <div class="choose-date">
+          from
+          <div class="start-date">
+            <p-calendar
+              inputId="startDate"
+              placeholder="--/--/----"
+              formControlName="startDate"
+            >
+            </p-calendar>
+          </div>
+
+          to
+          <div class="end-date">
+            <p-calendar
+              inputId="endDate"
+              formControlName="endDate"
+              placeholder="--/--/----"
+            >
+            </p-calendar>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkboxes">
+      <div class="class-time-checkboxs-container">
+        <h3>Class time:</h3>
+        <!-- <form class="class-time-checkboxs"
+        formGroupName="selectedClassTime">
+          <div class="p-field-checkbox">
+            <p-checkbox
+              formControlName="classTime"
+              name="morning"
+              value="Morning"
+              inputId="mn"
+            ></p-checkbox>
+            <label for="mn">Morning</label>
+          </div>
+          <div class="p-field-checkbox">
+            <p-checkbox 
+            name="noon" 
+            value="Noon" 
+            inputId="noon"
+            formControlName="classTime">
+          </p-checkbox>
+            <label for="noon">Noon</label>
+          </div>
+          <div class="p-field-checkbox">
+            <p-checkbox
+              name="night"
+              value="Night"
+              inputId="night"
+              formControlName="classTime"
+            ></p-checkbox>
+            <label for="night">Night</label>
+          </div>
+          <div class="p-field-checkbox">
+            <p-checkbox
+              name="online"
+              value="Online"
+              inputId="online"
+              formControlName="classTime"
+            ></p-checkbox>
+            <label for="online">Online</label>
+          </div>
+        </form> -->
+        <div class="class-time-checkboxs">
+          <div *ngFor="let time of classTime">
+            <div class="p-field-checkbox">
+              <p-checkbox
+                formControlName="classTime"
+                name="{{time.value}}"
+                value="{{time.value}}"
+                inputId="mn"
+              ></p-checkbox>
+              <label for="mn">{{time.value}}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-checkboxs-container">
+        <h3>Status:</h3>
+        <div class="status-checkboxs">
+          <div class="p-field-checkbox">
+            <p-checkbox
+              name="planning"
+              value="Planning"
+              inputId="planning"
+              formControlName="selectedStatus"
+            ></p-checkbox>
+            <label for="planning">Planning</label>
+          </div>
+          <div class="p-field-checkbox">
+            <p-checkbox
+              name="openning"
+              value="Openning"
+              inputId="openning"
+              formControlName="selectedStatus"
+            ></p-checkbox>
+            <label for="openning">Openning</label>
+          </div>
+          <div class="p-field-checkbox">
+            <p-checkbox
+              name="closed"
+              value="Closed"
+              inputId="closed"
+              formControlName="selectedStatus"
+            ></p-checkbox>
+            <label for="closed">Closed</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="attendee-checkboxs-container">
+        <h3>Attendee:</h3>
+        <div class="attendee-checkboxs">
+          <div class="p-field-checkbox">
+            <p-checkbox
+              name="intern"
+              value="intern"
+              inputId="intern"
+              formControlName="selectedAttendee"
+            ></p-checkbox>
+            <label for="intern">Intern</label>
+          </div>
+          <div class="p-field-checkbox">
+            <p-checkbox
+              name="fresher"
+              value="fresher"
+              inputId="fresher"
+              formControlName="selectedAttendee"
+            ></p-checkbox>
+            <label for="fresher">Fresher</label>
+          </div>
+          <div class="p-field-checkbox">
+            <p-checkbox
+              name="online-fee-fresher"
+              value="online-fee-fresher"
+              inputId="online-fee-fresher"
+              formControlName="selectedAttendee"
+            ></p-checkbox>
+            <label for="online-fee-fresher">Online fee-fresher</label>
+          </div>
+          <div class="p-field-checkbox">
+            <p-checkbox
+              name="offline-fee-fresher"
+              value="offline-fee-fresher"
+              inputId="offline-fee-fresher"
+              formControlName="selectedAttendee"
+            ></p-checkbox>
+            <label for="offline-fee-fresher">Offline fee-fresher</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="selects">
+      <div class="fsu-select">
+        <h3>FSU</h3>
+        <p-dropdown
+          [options]="fsuList"
+          placeholder="select"
+          [virtualScroll]="true"
+          [itemSize]="31"
+          [filter]="false"
+          formControlName="fsu"
+        ></p-dropdown>
+      </div>
+      <div class="trainer-select">
+        <h3>Trainer</h3>
+        <p-dropdown
+          [options]="trainerList"
+          placeholder="select"
+          [virtualScroll]="true"
+          [itemSize]="31"
+          [filter]="false"
+          formControlName="trainer"
+        ></p-dropdown>
+      </div>
+    </div>
+    <div class="buttons">
+      <!-- <app-saving [name]="btnReset" (click)="onReset()"></app-saving> -->
+      <!-- <p-button class="cancel-button" label="Clear" (click)="returnClass()"></p-button> -->
+      <!-- <app-saving [name]="btnSearch" (click)="onSubmit($event)"></app-saving> -->
+      <!-- <p-button class="submit-button" (click)="onSubmit($event)" label="Search"></p-button> -->
+    </div>
+  </form>
+</p-card>
+<p id="testing-request-json"></p>

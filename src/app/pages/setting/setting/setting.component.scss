@@ -1,0 +1,89 @@
+body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .bgimg {
+      background-image: url("https://webchopperservices.com/images/gif/web-development.gif");
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      /* background-size:1960.67 x 292.444; */
+      position: relative;
+      background-size: auto;
+      background-repeat: no-repeat;
+      color: #2d3748;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 25px;
+      display: flex;
+      flex-direction: column;
+    //   align-items: center;
+    //   justify-content: center;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    }
+
+    .top-left {
+      position: absolute;
+      top: 0;
+      left: 16px;
+    }
+
+    .bottom-left {
+        bottom: 8px;
+        left: 16px;
+        text-align: center;
+    }
+
+    hr {
+      margin: auto;
+      width: 40%;
+    }
+
+    .time small {
+        font-family: "Courier New", Courier, monospace;
+      font-size: 25px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 0;
+    }
+    
+    .countdown {
+        display: flex;
+        text-align: center;
+        // margin: 0 0 100px 617px;
+        justify-content: center;
+        transform: scale(1);
+    }
+    .time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 15px;
+    }
+    .time h2 {
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 1;
+        margin: 0 0 5px;
+    }
+
+    @media(max-width: 500px) {
+        h1 {
+            font-size: 45px;
+        }
+        .time {
+            margin: 5px;
+        }
+        .time h2 {
+            font-size: 12px;
+        }
+        .time small {
+            font-size: 10px;
+        }
+    }

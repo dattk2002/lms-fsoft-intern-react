@@ -1,0 +1,30 @@
+<p-dropdown
+    #DD
+    [editable]="false"
+    [filter]="false"
+    [showClear]="true"
+    [options]="options" 
+    [optionLabel]="optionLabel"
+    [optionValue]="optionValue"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    (onChange)="onSelectChange($event)"
+    (onShow)="onShow()"
+>
+    <ng-template pTemplate="header">
+        <div class="p-dropdown-header">
+            <div class="p-dropdown-filter-container" (click)="$event.stopPropagation()">
+                <input
+                    #filter
+                    class="p-dropdown-filter p-inputtext p-component"
+                    type="text"
+                    autocomplete="off"
+                    [value]="DD._filterValue || ''"
+                    (input)="DD.onFilterInputChange($event)"
+                    (keydown.enter)="onEnterSearch(DD._filterValue)"
+                />
+                <span class="p-dropdown-filter-icon pi pi-search"></span>
+            </div>
+        </div>
+    </ng-template>
+</p-dropdown>

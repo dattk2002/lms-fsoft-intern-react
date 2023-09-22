@@ -1,0 +1,75 @@
+{
+  "syllabus": [
+    {
+      "syllabusID": "91ac73da-367f-4333-986d-29600fa8c29e",
+      "name": "string",
+      "code": "string",
+      "syllabusStatus": null,
+      "createdOn": "2023-03-21T03:20:11.1288136",
+      "duration": 0,
+      "createdBy": "admin",
+      "outputStandard": [
+        "string"
+      ]
+    },
+    {
+      "syllabusID": "e117d7cd-b8c2-4ef1-a6a2-3013300a98ce",
+      "name": "Advanced Cross-Platform Application Programming With .NET",
+      "code": "PRN221",
+      "syllabusStatus": null,
+      "createdOn": "2023-03-17T02:09:24.4866667",
+      "duration": 30,
+      "createdBy": "admin",
+      "outputStandard": [
+        "Senior",
+        "Frehser"
+      ]
+    },
+    {
+      "syllabusID": "27c0ce10-371d-4fdb-ba1c-3940e9c1b7fb",
+      "name": "python ",
+      "code": "string",
+      "syllabusStatus": null,
+      "createdOn": "2023-03-21T02:15:53.3792452",
+      "duration": 12,
+      "createdBy": "admin",
+      "outputStandard": [
+        "python "
+      ]
+    },
+    {
+      "syllabusID": "b4fc8319-d2cf-49d0-8226-4d641836c412",
+      "name": "C++",
+      "code": "C++",
+      "syllabusStatus": null,
+      "createdOn": "2023-03-21T02:10:15.2833333",
+      "duration": 30,
+      "createdBy": "admin",
+      "outputStandard": []
+    },
+    {
+      "syllabusID": "b4fc8319-d2cf-49d0-8226-4d641836c48e",
+      "name": "Object-Oriented Programming",
+      "code": "PRO192",
+      "syllabusStatus": null,
+      "createdOn": "2023-03-17T02:09:24.4866667",
+      "duration": 30,
+      "createdBy": "admin",
+      "outputStandard": [
+        "Frehser"
+      ]
+    },
+    {
+      "syllabusID": "4e814870-e1a5-4e06-bcb3-6eafb7b9632a",
+      "name": "string",
+      "code": "string",
+      "syllabusStatus": null,
+      "createdOn": "2023-03-21T03:23:34.6261838",
+      "duration": 0,
+      "createdBy": "admin",
+      "outputStandard": [
+        "string"
+      ]
+    }
+  ]
+}

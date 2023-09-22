@@ -1,0 +1,100 @@
+.create-class-container {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  .content-container {
+    .top-content-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 30px 0;
+
+      app-create-class-general {
+        display: inline-block;
+        width: 30%;
+      }
+
+      app-create-class-time-frame {
+        display: inline-block;
+        width: 70%;
+      }
+
+      app-create-class-attendee {
+        display: inline-block;
+        width: 30%;
+        padding-top: 30px;
+      }
+    }
+    .bottom-content-container {
+      .training-detail-panel {
+        color: white;
+      }
+    }
+  }
+}
+
+:host ::ng-deep .p-panel-header {
+  background-color: var(--black);
+  color: white;
+  border-radius: 10px;
+  max-height: 40px;
+}
+
+:host ::ng-deep .p-panel-content {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+::ng-deep .p-tabview-nav {
+  background: none !important;
+  border: none !important;
+  li {
+    display: flex;
+    a:hover {
+      background-color: var(--black) !important;
+    }
+  }
+}
+
+::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  display: inline-block;
+  text-align: center;
+  min-width: 200px;
+  background: #6d7684;
+  border: 1px solid white;
+  border-radius: 20px 20px 0px 0px !important;
+  padding: 10px 20px !important;
+
+  span {
+    color: white;
+    text-align: center;
+  }
+}
+
+::ng-deep .ng-star-inserted .p-highlight {
+  a {
+    background: var(--black) !important;
+  }
+}
+
+::ng-deep .p-tabview .p-tabview-panels {
+  background-color: var(--black);
+  border-radius: 0px 20px 20px 20px;
+}
+
+@media all and (max-width: 768px) {
+  .create-class-container {
+    .content-container {
+      .top-content-container {
+        app-create-class-general {
+          width: 100%;
+        }
+
+        app-create-class-time-frame {
+          display: inline-block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

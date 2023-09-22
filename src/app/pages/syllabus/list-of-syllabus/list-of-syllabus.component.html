@@ -1,0 +1,194 @@
+<div class="list-of-syllabus-container">
+  <div>
+    <h1 class="h1">Syllabus</h1>
+  </div>
+  <hr />
+  <div class="box">
+    <div class="search-container">
+      <div class="search-date">
+        <div class="parent-search">
+          <form class="form" [formGroup]="profileForm" (ngSubmit)="search()">
+            <div class="body-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="search"
+                class="search"
+                formControlName="search"
+                placeholder="Search by..."
+                [(ngModel)]="searchKey"
+                (ngModelChange)="searchNameSyllabus()"
+              />
+              <div class="spinning">
+                <app-spin [spinning]="startSpin"></app-spin>
+              </div>
+              <p-button
+                type="submit"
+                class="btn btn-success"
+                [disabled]="!profileForm.valid"
+              ></p-button>
+            </div>
+          </form>
+        </div>
+        <div class="date-container">
+          <i class="fa-regular fa-calendar"></i>
+          <p-calendar
+            class="p-calendar"
+            selectionMode="range"
+            [readonlyInput]="true"
+            inputId="range"
+            placeholder="Create date"
+          ></p-calendar>
+        </div>
+      </div>
+      <div class="search-history-container"></div>
+    </div>
+    <div class="parent-button">
+      <button class="p-import" type="button" (click)="showBasicDialog()">
+        {{ name }}
+        <div>
+          <i class="fa-solid fa-upload"></i>
+        </div>
+      </button>
+      <p-dialog
+        [(visible)]="displayBasic"
+        [style]="{ width: '550px', height: '450px' }"
+        [baseZIndex]="10000"
+        [header]="'Import dialog'"
+      >
+        <app-import-dialog></app-import-dialog>
+      </p-dialog>
+      <app-import-dialog
+        [ngClass]="{ 'app-filter-small': !showFilterForm }"
+        *ngIf="showFilterForm"
+      ></app-import-dialog>
+
+      <button class="p-add" type="button">
+        <a routerLink="/syllabus/create-syllabus" class="add">{{ name1 }}</a>
+        <div>
+          <i class="fa-solid fa-circle-plus"></i>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <p-table
+      #dt
+      [value]="syllabuses"
+      [paginator]="true"
+      [rows]="10"
+      [showCurrentPageReport]="true"
+      [rowsPerPageOptions]="[5, 10, 15]"
+      currentPageReportTemplate=""
+      class="pcustom"
+      [value]="rows"
+      [tableStyle]="{ 'min-width': '50rem' }"
+    >
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th pSortableColumn="syllabusName">
+            Syllabus
+            <p-sortIcon field="syllabusName" class="sortIcon"></p-sortIcon>
+          </th>
+          <th pSortableColumn="code">
+            Code
+            <p-sortIcon field="code"></p-sortIcon>
+          </th>
+          <th pSortableColumn="createdOn">
+            Created On
+            <p-sortIcon field="createdOn"></p-sortIcon>
+          </th>
+          <th pSortableColumn="createdBy">
+            Created By
+            <p-sortIcon field="createdBy"></p-sortIcon>
+          </th>
+          <th pSortableColumn="duration">
+            Duration
+            <p-sortIcon field="duration"></p-sortIcon>
+          </th>
+          <th pSortableColumn="outputStandard">
+            Output Standard
+            <p-sortIcon field="outputStandard"></p-sortIcon>
+          </th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-row>
+        <tr>
+          <td>
+            <a routerLink="[]" (click)="viewDetail(row)" class="name">{{
+              row.syllabusName
+            }}</a>
+          </td>
+          <td>
+            <a routerLink="[]" (click)="viewDetail(row)">{{ row.code }}</a>
+          </td>
+          <td>
+            <a routerLink="[]" (click)="viewDetail(row)">{{
+              row.createdOn | date : "MM/dd/yy"
+            }}</a>
+          </td>
+          <td>
+            <a routerLink="[]" (click)="viewDetail(row)">{{ row.createdBy }}</a>
+          </td>
+          <td class="status">
+            <div class="status-detail">
+              <a routerLink="[]" (click)="viewDetail(row)">{{
+                row.duration.totalDate
+              }}</a>
+            </div>
+          </td>
+          <td>
+            <p-tag styleClass="tag1" value=" {{ row.outputStandard[0] }}">
+            </p-tag>
+          </td>
+          <td>
+            <div class="form-container">
+              <button
+                class="button-more"
+                type="button"
+                pButton
+                (click)="menu.toggle($event); selectId(row.id)"
+              >
+                <i class="fa-solid fa-ellipsis"></i>
+              </button>
+              <p-dialog
+                [(visible)]="displayConfirmDialog"
+                [modal]="true"
+                [style]="{ width: '40vw' }"
+                [baseZIndex]="10000"
+                [draggable]="false"
+                [resizable]="false"
+              >
+                <div class="title-container">
+                  <!-- icon -->
+                  <p>
+                    <i class="pi pi-info-circle"></i> Do you want to delete this
+                    class ?
+                  </p>
+                </div>
+
+                <ng-template pTemplate="footer">
+                  <div class="button-confirm">
+                    <app-saving
+                      class="no-btn"
+                      [name]="'No'"
+                      (click)="hideDialog()"
+                    ></app-saving>
+                    <app-saving
+                      class="yes-btn"
+                      [name]="'Yes'"
+                      (click)="onDeleteSyllabus(row.id)"
+                    ></app-saving>
+                  </div>
+                </ng-template>
+              </p-dialog>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <p-menu #menu [popup]="true" [model]="items"></p-menu>
+</div>

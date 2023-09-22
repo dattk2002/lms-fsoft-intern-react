@@ -1,0 +1,48 @@
+<form [formGroup]="syllabusOutLine" (ngSubmit)="onSubmit()">
+  <div formArrayName="employees">
+    <div *ngFor="let employee of employees().controls; let empIndex = index">
+      <div
+        [formGroupName]="empIndex"
+        style="border: 1px solid blue; padding: 10px; width: 600px; margin: 5px"
+      >
+        Session {{ empIndex + 1 }}
+        <!-- <input type="text" formControlName="firstName" />
+        Last Name:
+        <input type="text" formControlName="lastName" /> -->
+
+        <button (click)="removeEmployee(empIndex)">Remove</button>
+
+        <div formArrayName="skills">
+          <div
+            *ngFor="
+              let skill of employeeSkills(empIndex).controls;
+              let skillIndex = index
+            "
+          >
+            <div [formGroupName]="skillIndex">
+              Unit {{ skillIndex + 1 }} <br>
+
+              <input type="text" formControlName="skill" />
+              <select formControlName="newSkillPeer">
+                <option *ngFor="let peer of peers" [value]="peer">{{ peer }}</option>
+              </select>
+              <input type="text" formControlName="skill" />
+              <p-toggleButton [(ngModel)]="checked" onLabel="online" offLabel="offline"></p-toggleButton>
+              <select formControlName="newSkillPeer">
+                <option *ngFor="let tyle of tyles" [value]="tyle">{{ tyle }}</option>
+              </select>
+
+              <button (click)="removeEmployeeSkill(empIndex, skillIndex)">
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+        <button type="button" (click)="addEmployeeSkill(empIndex)">
+          Add unit
+        </button>
+      </div>
+    </div>
+    <button type="button" (click)="addEmployee()">Add day</button>
+  </div>
+</form>

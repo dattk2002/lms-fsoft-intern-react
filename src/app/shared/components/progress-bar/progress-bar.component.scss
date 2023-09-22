@@ -1,0 +1,195 @@
+:host ::ng-deep .progress-bar {
+  .p-progressbar-value {
+    width: 40px;
+    height: 12px;
+    /* Main */
+    background: #2d3748;
+    /* Inside auto layout */
+    border-radius: 0px 6px 6px 0px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    .p-progressbar-label {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      right: 2px;
+      top: 2px;
+      border-radius: 6px 6px 6px 6px;
+      background: #ffffff;
+    }
+  }
+  .p-progressbar-determinate {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    max-width: 35rem;
+    height: 12px;
+    background: #cccccc;
+    border-radius: 6px 6px 6px 6px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+:host ::ng-deep .progress-bar1 {
+  .p-progressbar-value {
+    /* Progress bar */
+    width: 80px;
+    height: 12px;
+    /* blue main */
+    background: #285d9a;
+    /* Inside auto layout */
+    border-radius: 0px 6px 6px 0px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+  }
+  .p-progressbar-determinate {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    max-width: 35rem;
+    height: 12px;
+    background: #cccccc;
+    border-radius: 6px 6px 6px 6px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    border-radius: 50px;
+  }
+}
+:host ::ng-deep .progress-bar2 {
+  .p-progressbar-value {
+    /* Bar */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    width: 80px;
+    border-radius: 0px 6px 6px 0px;
+    height: 12px;
+    /* orange main */
+    background: #d55b13;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+  .p-progressbar-determinate {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    max-width: 35rem;
+    height: 12px;
+    background: #cccccc;
+    border-radius: 6px 6px 6px 6px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+:host ::ng-deep .progress-bar3 {
+  .p-progressbar-value {
+    /* Progress bar */
+    width: 80px;
+    height: 12px;
+    /* green main */
+    background: #2f913f;
+    /* Inside auto layout */
+    border-radius: 0px 6px 6px 0px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+  }
+  .p-progressbar-determinate {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    max-width: 35rem !important;
+    height: 12px;
+    background: #cccccc;
+    border-radius: 6px 6px 6px 6px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+
+.progress-caption {
+  display: inline-flex;
+  justify-content: space-between;
+  max-width: 35rem;
+  .h3 {
+    width: 60px;
+    height: 15px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+  }
+}
+
+// Search
+.search-container {
+  position: relative;
+  .img {
+    position: absolute;
+    top: 20%;
+    left: 10px;
+    z-index: 1;
+  }
+  .search-input {
+    padding-left: 3rem;
+    border-radius: 6px;
+    width: 300px;
+    height: 35px;
+    border: 1px solid #000000;
+    position: relative;
+    color: #000000;
+    font-family: "Inter";
+    font-style: italic;
+    line-height: 15px;
+    color: #000000;
+  }
+  .placeholder {
+    width: 67px;
+    height: 15px;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+}

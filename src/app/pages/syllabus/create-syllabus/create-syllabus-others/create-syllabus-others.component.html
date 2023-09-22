@@ -1,0 +1,154 @@
+<p id="create_syllabus-testing-json-qqgido"></p>
+<form
+  [formGroup]="create_syllabus"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="scheme-container">
+    <div class="scheme-title">Assessment scheme</div>
+    <div class="assessment-container">
+      <div class="text-mid">
+        <div class="text-example">
+          <div class="text-example1">Quiz:</div>
+          <div class="text-example2">
+            <input class="input" type="text" formControlName="quiz" placeholder="%" />
+          </div>
+        </div>
+        <div class="text-example">
+          <div class="text-example1">Assignment:</div>
+          <div class="text-example2">
+            <input class="input" type="text" formControlName="assignment" placeholder="%"/>
+          </div>
+        </div>
+      </div>
+      <div class="text-example">
+        <div class="text-example1">Final:</div>
+        <div class="text-example3">
+          <input class="input" type="text" formControlName="final" placeholder="%"/>
+        </div>
+        <div class="text-example1">Final Theory:</div>
+        <div class="text-example3">
+          <input class="input" type="text" formControlName="finalTheory" placeholder="%" />
+        </div>
+        <div class="text-example1">Final Practice:</div>
+        <div class="text-example3">
+          <input class="input" type="text" formControlName="finalPractice" placeholder="%" />
+        </div>
+      </div>
+
+    </div>
+    <div class="passing-container">
+      <div>
+        <div class="text-all">Passing criteria</div>
+        <div class="text-example">
+          <div class="text-example1">GPA *</div>
+          <div class="text-example4">
+            <input class="input" type="text" formControlName="gpa" placeholder="%"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="training-container">
+    <div class="training">Training delivery principle</div>
+    <p-editor
+      [(ngModel)]="htmlEditor"
+      [style]="{ height: '320px' }"
+      formControlName="training"
+    >
+      <p>Value: {{ htmlEditor || "empty" }}</p>
+      <span class="ql-formats">
+        <span class="ql-size ql-picker">
+          <span
+            class="ql-picker-label"
+            tabindex="0"
+            role="button"
+            aria-expanded="false"
+            aria-controls="ql-picker-options-1"
+          >
+            <svg viewBox="0 0 18 18">
+              <polygon
+                class="ql-stroke"
+                points="7 11 9 13 11 11 7 11"
+              ></polygon>
+              <polygon class="ql-stroke" points="7 7 9 5 11 7 7 7"></polygon>
+            </svg>
+          </span>
+          <span
+            class="ql-picker-options"
+            aria-hidden="true"
+            tabindex="-1"
+            id="ql-picker-options-1"
+          >
+            <span
+              tabindex="0"
+              role="button"
+              class="ql-picker-item"
+              data-value="small"
+            ></span>
+            <!-- <span tabindex="0" role="button" class="ql-picker-item ql-selected"></span> -->
+            <span
+              tabindex="0"
+              role="button"
+              class="ql-picker-item"
+              data-value="large"
+            ></span>
+            <span
+              tabindex="0"
+              role="button"
+              class="ql-picker-item"
+              data-value="huge"
+            ></span>
+          </span>
+        </span>
+
+        <button type="button" class="ql-bold" aria-label="Bold"></button>
+        <button type="button" class="ql-italic" aria-label="Italic"></button>
+        <button
+          type="button"
+          class="ql-underline"
+          aria-label="Underline"
+        ></button>
+        <button type="button" class="ql-image" aria-label="Image"></button>
+        <select class="ql-align" [title]="'Aligment'">
+          <option selected></option>
+          <option value="center"></option>
+          <option value="right"></option>
+          <option value="justify"></option>
+        </select>
+
+        <select class="ql-color" [title]="'Char color'"></select>
+
+        <button type="button" class="ql-strike" aria-label="Strike"></button>
+        <button
+          type="button"
+          class="ql-code-block"
+          aria-label="CodeBlock"
+        ></button>
+        <button
+          type="button"
+          class="ql-blockquote ql-active"
+          aria-label="Blockquote"
+        ></button>
+        <button
+          type="button"
+          class="ql-list"
+          value="ordered"
+          aria-label="Order"
+        ></button>
+        <button
+          type="button"
+          class="ql-list"
+          value="bullet"
+          aria-label="Bullet"
+        ></button>
+        <button type="button" class="ql-link" aria-label="Link"></button>
+      </span>
+    </p-editor>
+    <div>
+      <button type="submit" (click)="onSubmit()" class="submit">
+        <a>Save</a>
+      </button>
+    </div>
+  </div>
+</form>

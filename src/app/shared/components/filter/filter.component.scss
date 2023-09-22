@@ -1,0 +1,123 @@
+.filter-card {
+  display: inline-block;
+  max-width: 746px;
+  max-height: 389px;
+  .filter-form {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    .location-time {
+      width: 100%;
+      display: flex;
+      .class-location {
+        width: 100%;
+      }
+      .time-frame {
+        width: 100%;
+        .choose-date {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    .checkboxes {
+      padding-top: 2rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      h3 {
+        padding: 0;
+        margin: 0;
+        padding-right: 1rem;
+      }
+      .class-time-checkboxs-container {
+        width: 100%;
+        display: flex;
+        // justify-content: space-between;
+        line-height: 1rem;
+        padding-right: 2rem;
+      }
+      .status-checkboxs-container {
+        width: 100%;
+        display: flex;
+        // justify-content: space-between;
+        line-height: 1rem;
+        padding-right: 2rem;
+      }
+      .attendee-checkboxs-container {
+        width: 100%;
+        display: flex;
+        // justify-content: space-between;
+        line-height: 1rem;
+      }
+    }
+    .selects {
+      width: 63.33%;
+      display: flex;
+      justify-content: space-between;
+      .fsu-select {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        h3 {
+          padding-right: 1rem;
+        }
+      }
+      .trainer-select {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        h3 {
+          padding-right: 1rem;
+        }
+      }
+    }
+    .buttons {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      app-saving {
+        margin: 0.5rem;
+        .cancel-button {
+          
+        }
+        
+        .submit-button {
+
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep .p-multiselect {
+  width: 90%;
+}
+:host ::ng-deep .p-checkbox-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 0;
+}
+
+:host ::ng-deep .p-checkbox .p-checkbox-box .p-checkbox-icon {
+  color: solid 1px var(--blue);
+  background: #ffff;
+}
+
+:host ::ng-deep .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover{
+    border-color: var(--blue);
+    border-radius: 1.5px;
+}
+
+:host ::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+    border-color: var(--blue);
+}
+
+@media all and (max-width: 600px) {
+  .checkboxes {
+    display: block !important;
+    width: 100%;
+  }
+}

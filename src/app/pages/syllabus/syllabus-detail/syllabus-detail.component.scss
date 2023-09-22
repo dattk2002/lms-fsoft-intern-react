@@ -1,0 +1,343 @@
+.outside-body-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  .syllabus-detail-container {
+    width: 100%;
+    .code-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      .total {
+        width: 50%;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+        letter-spacing: 0.2em;
+        color: #2d3748;
+      }
+      .button-more {
+        width: 20%;
+        margin-left: 210px;
+        background-color: whitesmoke;
+        border: none;
+        color: #2d3748;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .button-active {
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 15px;
+        width: 72px;
+        height: 27px;
+        background: #2d3748;
+        border: 1.5px solid #ffffff;
+        border-radius: 50px;
+      }
+      .button {
+        color: white;
+        background-color: #2d3748;
+        border: none;
+      }
+    }
+
+    .code-syllabus {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      color: #2d3748;
+    }
+    .text {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+    }
+    .text1 {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+    }
+    .day-container {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px 20px 10px 30px;
+      gap: 40px;
+      width: 860px;
+      height: 39px;
+      background: #2d3748;
+      border-bottom: 1px solid #f1f1f1;
+      border-radius: 0px;
+      .text-day {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #ffffff;
+      }
+    }
+    .text-unit {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+    }
+    .text-our {
+      font-family: "Inter";
+      font-style: italic;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #323232;
+    }
+    .time-location {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px;
+
+      width: 219px;
+      height: 403px;
+
+      /* Inside auto layout */
+
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+    .text-location {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 0px;
+      gap: 10px;
+      width: 219px;
+      height: 29px;
+      background: #2d3748;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 20px 20px 0px 0px;
+      width: 120px;
+      height: 19px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      color: #ffffff;
+    }
+  }
+}
+::ng-deep .p-tabview-nav {
+  background: none !important;
+  border: none !important;
+  li {
+    display: flex;
+    a:hover {
+      background-color: var(--black) !important;
+    }
+  }
+}
+
+::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  display: inline-block;
+  text-align: center;
+  min-width: 200px;
+  background: #6d7684;
+  border: 1px solid white;
+  border-radius: 20px 20px 0px 0px !important;
+  padding: 10px 20px !important;
+
+  span {
+    color: white;
+    text-align: center;
+  }
+}
+
+::ng-deep .ng-star-inserted .p-highlight {
+  a {
+    background: var(--black) !important;
+  }
+}
+
+::ng-deep .p-tabview .p-tabview-panels {
+  background-color: white;
+  border-radius: 0px 20px 20px 20px;
+}
+::ng-deep .pi-chevron-right:before {
+  content: none;
+}
+::ng-deep .pi-chevron-down:before {
+  content: none;
+}
+::ng-deep .p-scrollpanel:hover .p-scrollpanel-bar,
+.p-scrollpanel:active .p-scrollpanel-bar {
+  opacity: 1;
+  background: #8b8b8b;
+  border-radius: 20px;
+}
+::ng-deep .p-accordion .p-accordion-header .p-accordion-header-text {
+  position: absolute;
+  left: 35px;
+  width: 45px;
+  height: 19px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+}
+::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 20px 10px 30px;
+  width: 100%;
+  height: 39px;
+  background: #2d3748;
+  border-radius: 0px;
+  border-bottom: 1px solid #f1f1f1;
+  border-left: 0px solid #ffffff;
+  border-right: 0px solid #ffffff;
+  border-top: 1px solid #f1f1f1;
+}
+::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link:hover {
+  border-bottom: 1px solid #f1f1f1;
+  border-left: 0px solid #ffffff;
+  border-right: 0px solid #ffffff;
+  border-top: 1px solid #f1f1f1;
+}
+::ng-deep .p-accordion .p-accordion-content {
+  padding: 1.25rem;
+  border: 0px solid #ffffff;
+  background: #ffffff;
+  color: #495057;
+  border-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+::ng-deep .p-accordion p-accordiontab .p-accordion-tab {
+  margin-bottom: 0px;
+  width: 101%;
+}
+::ng-deep .pi-plus:before {
+  content: "\e928";
+  color: #285d9a;
+}
+::ng-deep .pi-minus:before {
+  content: "\e929";
+  color: #285d9a;
+}
+::ng-deep .p-panel .p-panel-content {
+  padding: 1.25rem;
+  border: none;
+  background: #f7f7f7;
+  color: #495057;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-top: 0 none;
+}
+.title-mid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 0px 20px 30px;
+  gap: 5px;
+  width: 100%;
+  height: 91px;
+  .mid-number {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 132px;
+    height: 29px;
+    .mid-day {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+      gap: 5px;
+      width: 62px;
+      height: 29px;
+    }
+  }
+  .number {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: flex-end;
+    color: #000000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 70px;
+    height: 24px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: flex-end;
+    color: #000000;
+  }
+  .time {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 70px;
+    height: 24px;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: flex-end;
+    color: #000000;
+  }
+  .modify {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+}
+.fa-solid fa-ellipsis {
+  size: 10px;
+  color: #285d9a;
+}

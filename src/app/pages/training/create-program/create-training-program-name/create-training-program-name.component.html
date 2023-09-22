@@ -1,0 +1,40 @@
+<div class="program-detail">
+    <div class="program-header">
+      <div class="text-program">New Training program</div>
+      <div class="program-name"></div>
+    </div>
+    <div class="program-meta-data">
+      <div class="program-name2">Program name*</div>
+      <form [formGroup]="profileForm" (ngSubmit)="createSearch()">
+        <div class="body-search">
+          <input
+            type="text"
+            class="search"
+            formControlName="search"
+            placeholder="Type program name"
+          />
+          <p-button
+            type="submit"
+            class="btn btn-success"   
+            [disabled]="!profileForm.valid"
+            (click)="createSearch()" 
+            >Create</p-button>
+        </div>
+      </form>
+    </div>
+    <hr class="hr" />
+    <!-- content -->
+  
+    <div class="content">
+      <div class="content-title">
+        <div class="text-content">Content</div>
+      </div>
+      <div class="day1"></div>
+      <div class="day2"></div>
+      <div class="day3"></div>
+    </div>
+    <div class="day1"></div>
+    <div class="day2"></div>
+    <div class="day3"></div>
+  </div>
+  

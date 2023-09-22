@@ -1,0 +1,109 @@
+<app-class-header [bigTitle]="className"></app-class-header>
+
+<div class="create-class-container">
+  <div class="content-container">
+    <div class="top-content-container">
+      <!-- <app-create-class-general (generalRequest)="addToRequest($event)"></app-create-class-general> -->
+      <app-create-class-general
+        joyrideStep="firstStep"
+        text="Fill information"
+      ></app-create-class-general>
+      <app-create-class-time-frame
+        joyrideStep="thirdStep"
+        text="Pick started date"
+      ></app-create-class-time-frame>
+      <app-create-class-attendee
+        joyrideStep="secondStep"
+        text="Fill attendee condition and number"
+      ></app-create-class-attendee>
+    </div>
+
+    <div class="bottom-content-container">
+      <p-tabView>
+        <p-tabPanel header="Training Program">
+          <div class="training-detail-panel">
+            <button onclick="">
+              <a routerLink="/class/create/add-syllabus">
+                <i class="fa-solid fa-pen"></i>
+              </a>
+            </button>
+            <app-training-detail-share></app-training-detail-share>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Attendee List">
+          <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci
+            velit, sed quia non numquam eius modi.
+          </p>
+        </p-tabPanel>
+        <p-tabPanel header="Budget">
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium voluptatum deleniti atque corrupti quos
+            dolores et quas molestias excepturi sint occaecati cupiditate non
+            provident, similique sunt in culpa qui officia deserunt mollitia
+            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
+            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
+            eligendi optio cumque nihil impedit quo minus.
+          </p>
+        </p-tabPanel>
+        <p-tabPanel header="Other">
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium voluptatum deleniti atque corrupti quos
+            dolores et quas molestias excepturi sint occaecati cupiditate non
+            provident, similique sunt in culpa qui officia deserunt mollitia
+            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
+            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
+            eligendi optio cumque nihil impedit quo minus.
+          </p>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+
+    <div class="buttons-container">
+      <app-saving
+        [name]="'Next'"
+        (click)="sendSumRequest()"
+        joyrideStep="fourthStep"
+        text="Go to next step"
+      ></app-saving>
+      <app-saving
+        [name]="'Finish'"
+        (click)="sendForm()"
+      ></app-saving>
+    </div>
+  </div>
+  <div class="tooltip-container">
+    <p-dialog
+      [(visible)]="displayModal"
+      [modal]="true"
+      [style]="{ width: '50vw' }"
+      [baseZIndex]="10000"
+      [draggable]="false"
+      [resizable]="false"
+    >
+      <div class="title-container">
+        <!-- icon -->
+        <p>Please take short helps for creating a class.</p>
+      </div>
+
+      <ng-template pTemplate="footer">
+        <input
+          type="checkbox"
+          id="dont-show-again"
+          value="true"
+          [(ngModel)]="hideForever"
+          (ngModelChange)="hideForeverTooltip()"
+        />
+        <label for="dont-show-again">Don't show again</label>
+        <app-saving [name]="'Go'" (click)="hideModel()"></app-saving>
+      </ng-template>
+    </p-dialog>
+  </div>
+</div>

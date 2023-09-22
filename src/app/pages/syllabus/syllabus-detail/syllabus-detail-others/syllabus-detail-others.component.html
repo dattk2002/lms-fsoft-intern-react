@@ -1,0 +1,130 @@
+<div class="outside-body-container">
+  <div class="time-scheme">
+    <div class="bdtimeallocation-others">
+      <div class="bdtitle-others">
+        <div class="texttitle-others">Time allocation</div>
+      </div>
+      <div class="charttime-others">
+        <p-chart type="pie" [data]="data"> </p-chart>
+        <div class="bdinfochart-others">
+          <div class="bdlab-others">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <rect
+                x="3.91309"
+                y="4.08984"
+                width="6.96216"
+                height="6.97172"
+                rx="3.48108"
+                fill="#F4BE37"
+              />
+            </svg>
+            <div class="textlab-others">Assignment/Lab</div>
+            <div class="textpercent-others">({{timeAllocationDTO.assignmentPercent}}%)</div>
+          </div>
+          <div class="bdconcept-others">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <rect
+                x="3.91309"
+                y="4.08984"
+                width="6.96216"
+                height="6.97172"
+                rx="3.48108"
+                fill="#FF9F40"
+              />
+            </svg>
+            <div class="textconcept-others">Concept/Lecture</div>
+            <div class="textpercent-others">({{timeAllocationDTO.conceptPercent}}%)</div>
+          </div>
+          <div class="bdguide-others">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <rect
+                x="3.91309"
+                y="4.08984"
+                width="6.96216"
+                height="6.97172"
+                rx="3.48108"
+                fill="#0D2535"
+              />
+            </svg>
+            <div class="textguide-others">Guide/Review</div>
+            <div class="textpercent-others">({{timeAllocationDTO.guidePercent}}%)</div>
+          </div>
+          <div class="bdtest-others">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <rect
+                x="3.91309"
+                y="4.08984"
+                width="6.96216"
+                height="6.97172"
+                rx="3.48108"
+                fill="#5388D8"
+              />
+            </svg>
+            <div class="texttest-others">Test/Quiz</div>
+            <div class="textpercent-others">({{timeAllocationDTO.testPercent}}%)</div>
+          </div>
+          <div class="bdexam-others">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <rect
+                x="3.91309"
+                y="4.08984"
+                width="6.96216"
+                height="6.97172"
+                rx="3.48108"
+                fill="#206EE6"
+              />
+            </svg>
+            <div class="textexam-others">Exam</div>
+            <div class="textpercent-others">({{timeAllocationDTO.examPercent}}%)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scheme-container">
+      <div class="scheme-title">Assessment scheme</div>
+      <div class="assessment-container">
+        <div class="text-mid">
+          <div class="text-example">
+            <div class="text-example1">Quiz:</div>
+            <div class="text-example2">
+              {{ otherSyllabusDTOOther.assessmentScheme.quizPercent }}%
+            </div>
+          </div>
+          <div class="text-example">
+            <div class="text-example1">Assignment:</div>
+            <div class="text-example2">
+              {{
+                otherSyllabusDTOOther.assessmentScheme.assignmentPercent
+              }}%
+            </div>
+          </div>
+        </div>
+        <div class="text-example">
+          <div class="text-example1">Final:</div>
+          <div class="text-example3">
+            {{ otherSyllabusDTOOther.assessmentScheme.finalPercent}}%
+          </div>
+        </div>
+      </div>
+      <div class="passing-container">
+        <div>
+          <div class="text-all">Passing criteria</div>
+          <div class="text-example">
+            <div class="text-example1">GPA *</div>
+            <div class="text-example4">
+              {{  otherSyllabusDTOOther.assessmentScheme.gpaPercent}}%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="training-container">
+    <div class="training">Training delivery principle</div>
+    <div>
+      {{  otherSyllabusDTOOther.trainingDeliveryPriciple}}
+    </div>
+  </div>
+</div>
+

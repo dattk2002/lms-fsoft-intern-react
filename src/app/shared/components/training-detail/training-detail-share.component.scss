@@ -1,0 +1,555 @@
+.Detailfull{max-width: 1280px;
+  margin: 0 auto;}
+.Program header{
+
+
+
+
+}
+.program{
+  box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 20px 30px;
+gap: 10px;
+
+width: 100%;
+height: 123px;
+
+background: #2D3748;
+border-top: 1px solid #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+.training{
+
+  width: 100%;
+  height: 29px;
+
+  /* section */
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+  letter-spacing: 0.2em;
+
+  color: #FFFFFF;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  }
+}
+
+.DevOps{
+
+position: relative;
+width: 100%;
+height: 44px;
+
+/* title */
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 44px;
+/* identical to box height */
+
+letter-spacing: 0.2em;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+display: flex;
+  align-items: center;
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    right: -100%;
+
+
+  }
+  .DevOps h3{
+    margin-right: -450px;
+    font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  }
+  .activeTren{
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
+
+    width: 72px;
+    height: 27px;
+
+
+    /* Main */
+
+    background: #2D3748;
+    border: 1.5px solid #FFFFFF;
+    border-radius: 50px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+
+  /* Dropdown button */
+  .dropbtn {
+    float: right;
+    background-color: #2D3748;
+    color: white;
+    padding: 10px;
+    font-size: 36px;
+    border: none;
+
+
+  }
+
+  /* Dropdown content */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: inherit;
+
+    background: #FFFFFF;
+
+    border-radius: 10px;
+
+
+    .Deleteprogram{
+
+
+
+
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+
+      /* Un-modified */
+
+      color: #8B8B8B;
+
+
+
+      }
+      .dd{
+
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+
+
+        color: #2C5282;
+    line-height: 10px;
+
+      }
+
+  }
+  a.manager{
+    color: #2A4365;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 19px;
+  }
+  .dropdown-content a {
+    color: #8B8B8B;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+
+
+
+
+
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content  td  {
+    width: 100%;
+  }
+
+
+
+
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .pagination {
+      margin: 0; // Xoá margin mặc định của phân trang
+      display: flex;
+      align-items: center;
+
+      .page-item {
+        list-style: none; // Xoá bullet mặc định của danh sách
+      }
+
+      .page-link {
+        text-decoration: none; // Xoá underline mặc định của liên kết
+      }
+
+      .fa-chevron-left,
+      .fa-chevron-right {
+        margin: 0 20px; // Khoảng cách giữa mũi tên và số trang
+        cursor: pointer; // Thêm hiệu ứng con trỏ khi rê chuột vào mũi tên
+      }
+    }
+  }
+}
+
+.active{
+
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 5px 15px;
+
+width: 72px;
+height: 27px;
+margin-right: 100px;
+
+/* Main */
+
+background: #2D3748;
+border: 1.5px solid #FFFFFF;
+border-radius: 50px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+
+}
+
+
+
+.days31{
+
+width: 28px;
+height: 29px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 100%;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+display: flex;
+align-items: flex-end;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.days{
+  width: 41px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400px;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: flex-end;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.hours{
+  width: 70px;
+  height: 24px;
+
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: flex-end;
+
+  color: #000000;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.dayProgram p span {
+  display: inline-block;
+}
+p span {
+  margin-right: 10px;
+}
+.nameaction {
+  font-weight: bold;
+}
+hr {
+  width: 100%;
+
+
+border: 0.7px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
+}
+.content{
+  width: 100%;
+  height: 29px;
+
+  /* sub title */
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+
+  color: #000000;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+
+.Syllabus{
+
+  margin-bottom: 10px;
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 20px 30px;
+gap: 10px;
+
+width: 100%;
+height: 100%;
+
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px rgba(0, 0, 0, 0.1);
+border-radius: 20px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+
+.Linux{
+  margin-right: 90px;
+  width: 15%;
+height: 29px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+letter-spacing: 0.2em;
+
+/* Main */
+
+color: #2D3748;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.LIN{
+  border-right: 1px solid black;
+  height: 1em;
+  display: inline-block;
+  margin: 0 0.5em;
+  margin-right: 1em;
+
+
+
+}
+.LIN:last-child {
+  border-right: none;
+  margin-right: 0;
+}
+.cointainer {
+  display: flex;
+  align-items: center;
+   position: relative;
+}
+.Syllabus1Inactive{
+
+  margin-bottom: 10px;
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 20px 30px;
+gap: 10px;
+
+width: 100%;
+height: 100%;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px rgba(0, 0, 0, 0.1);
+border-radius: 20px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+
+.Linux1{
+  width: 95%;
+height: 29px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+letter-spacing: 0.2em;
+
+/* Un-modified */
+
+color: #8B8B8B;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.inactive-button{
+  width: 72px;
+height: 27px;
+
+
+background: #B9B9B9;
+color: #FFFFFF;
+border-radius: 50px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0
+}
+.LIN1{
+  border-right: 1px solid black;
+  height: 1em;
+  display: inline-block;
+  margin: 0 0.5em;
+  margin-right: 1em;
+  color: #8B8B8B;
+
+
+
+}
+.LIN1:last-child {
+  border-right: none;
+  margin-right: 0;
+}
+
+}
+.active-button{
+  width: 72px;
+  height: 27px;
+
+  /* Main */
+
+  background: #2D3748;
+  border-radius: 50px;
+  color: #FFFFFF;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+

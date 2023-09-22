@@ -1,0 +1,13 @@
+<app-class-header [bigTitle]="bigTitle"></app-class-header>
+<div class="outside-body-container">
+  <div class="program-name2">Class name*</div>
+  <form class="body-search" [formGroup]="nameForm" (ngSubmit)="className()">
+    <input
+      type="text"
+      class="search"
+      placeholder="Type class name"
+      formControlName="nameValue"
+    />
+    <app-saving [name]="'Create'" (click)="className()"></app-saving>
+  </form>
+</div>

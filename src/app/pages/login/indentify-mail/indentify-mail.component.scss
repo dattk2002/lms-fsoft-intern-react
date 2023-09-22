@@ -1,0 +1,154 @@
+.background {
+  background: url(../../../../assets/images/background/login-background.png);
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px 20px;
+  gap: 50px;
+  justify-content: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  gap: 15px;
+  max-width: 500px;
+  min-height: 600px;
+  background: #fffefe;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.16);
+  border-radius: 20px;
+  justify-content: center;
+
+  h2 {
+    max-width: 515px;
+    height: 88px;
+
+    /* title */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    letter-spacing: 0.2em;
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+}
+a{
+  color: blue;
+}
+
+h3 {
+width: 515px;
+height: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+label {
+  display: block;
+  margin-bottom: 1px;
+}
+input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  width: 350px;
+  height: 20px;
+  background: #f1f1f1;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+button{
+
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+
+  width: 379px;
+  height: 59px;
+
+  /* Main */
+
+  background: #2D3748;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin-top: 10px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.password{
+  margin-top: 10px;
+}
+.forgot{
+  width: 119px;
+  height: 17px;
+
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+
+  /* Un-modified */
+
+  color: #8B8B8B;
+  position: absolute;
+
+
+bottom: 0;
+  right: 10px;
+  margin-bottom: 140px; /* Khoảng cách với khung input password */
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+}
+

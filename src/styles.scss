@@ -1,0 +1,420 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/sass/index.scss";
+@import "./assets/sass/features/drag-drop.scss";
+@import "./assets/sass/features/inspection-template.scss";
+@import "./assets/sass/features/angular-calendar.scss";
+@import "./assets/sass/features/flatpickr.scss";
+
+@import "mixin.scss";
+
+:root {
+  --color-primary: black;
+  --color-secondary: white;
+  --black: #2d3748;
+  --orange: #d45b13;
+  --green: #2f903f;
+  --blue: #285d9a;
+  --white: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+
+/* total width */
+::-webkit-scrollbar {
+  background-color: #fafafa;
+  width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+::-webkit-scrollbar-track {
+  background-color: #fafafa;
+}
+
+/* scrollbar itself */
+::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+  border: 4px solid #fafafa;
+
+  &:hover {
+    background-color: #a0a0a5;
+    border: 4px solid #f4f4f4;
+  }
+}
+
+/* set button(top and bottom of the scrollbar) */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #fafafa;
+}
+
+// Set font for primeng
+.p-component:not(.p-badge) {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "GE-Inspira-Sans", sans-serif;
+  font-weight: 500;
+}
+
+.p-button {
+  -webkit-appearance: none !important;
+}
+
+.p-placeholder {
+  opacity: 0.6;
+  font-family: "GE-Inspira-Sans", sans-serif;
+  font-weight: 500;
+}
+
+.p-datatable,
+.p-treetable {
+  .p-paginator {
+    padding: 0.5rem;
+
+    .p-paginator-first {
+      margin-left: auto;
+    }
+
+    p-dropdown[styleClass="p-paginator-page-options"],
+    .p-paginator-first,
+    .p-paginator-prev,
+    .p-paginator-pages,
+    .p-paginator-next,
+    .p-paginator-last {
+      order: 2;
+    }
+
+    .p-paginator-next {
+      margin-left: 1rem;
+    }
+
+    &.p-paginator-bottom {
+      border: none;
+      padding: 0;
+    }
+
+    .p-paginator-current {
+      cursor: default;
+    }
+
+    .p-dropdown {
+      line-height: 1.2rem;
+    }
+
+    .p-paginator-left-content {
+      margin: unset;
+    }
+
+    .p-paginator-right-content {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .p-treetable-tbody > tr > td,
+  .p-datatable-tbody > tr > td {
+    padding: 0.7rem 1rem;
+  }
+
+  .p-treetable-tbody > tr > td:not(.p-ignore-nowrap),
+  .p-treetable-tbody > tr > td:not(.p-ignore-nowrap) p,
+  .p-treetable-thead > tr > th:not(.p-ignore-nowrap),
+  .p-datatable-tbody > tr > td:not(.p-ignore-nowrap),
+  .p-datatable-tbody > tr > td:not(.p-ignore-nowrap) p,
+  .p-datatable-thead > tr > th:not(.p-ignore-nowrap) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .p-datatable-tbody > tr:not(.p-highlight, .disabled):hover {
+    background: $table-row-hoverable-color;
+  }
+
+  .p-treetable-thead > tr > th,
+  .p-datatable-thead > tr > th {
+    padding: 0.3rem 1rem;
+  }
+
+  .ng-touched.ng-invalid > .p-inputtext {
+    border-color: $error-color;
+  }
+
+  .p-calendar.p-error > .p-inputtext,
+  .p-calendar.p-invalid > .p-inputtext {
+    border-color: $error-color;
+  }
+
+  .ng-touched.ng-invalid > .p-autocomplete > .p-inputtext {
+    border-color: $error-color;
+  }
+
+  .ng-touched.ng-invalid > .p-calendar > .p-inputtext {
+    border-color: $error-color;
+  }
+
+  .ng-touched.ng-invalid > .p-checkbox > .p-checkbox-box {
+    border-color: $error-color;
+  }
+
+  .p-inputtext.ng-touched.ng-invalid {
+    border-color: $error-color;
+  }
+}
+
+.p-treetable-striped {
+  @extend .p-datatable;
+}
+
+.error-tooltip {
+  .p-tooltip-text {
+    color: $bg-err-tooltip-color;
+    background-color: white;
+    font-size: 80%;
+    font-weight: 400;
+  }
+
+  &.p-tooltip.p-tooltip-top .p-tooltip-arrow {
+    border-top-color: white;
+  }
+
+  &.p-tooltip.p-tooltip-bottom .p-tooltip-arrow {
+    border-bottom-color: white;
+  }
+
+  &.p-tooltip.p-tooltip-left .p-tooltip-arrow {
+    border-left-color: white;
+  }
+
+  &.p-tooltip.p-tooltip-right .p-tooltip-arrow {
+    border-right-color: white;
+  }
+}
+
+.description-tooltip {
+  .p-tooltip-text {
+    width: fit-content;
+    max-width: 500px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+  }
+}
+
+.p-inputtext[type="text"] {
+  text-overflow: ellipsis;
+}
+
+span.p-button-icon.pi.pi-spinner {
+  animation-duration: 1s;
+}
+
+a.disable-link {
+  pointer-events: none;
+}
+
+.p-field-checkbox > label,
+.p-field-radiobutton > label {
+  margin-bottom: 0;
+}
+
+.table-header {
+  display: flex;
+
+  &_right {
+    margin-left: auto;
+  }
+}
+
+.table-toolbar {
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+}
+
+.label-required::before {
+  display: inline-block;
+  margin-right: 4px;
+  color: #ff4d4f;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: "*";
+}
+
+.btn-action-form {
+  min-width: 10rem !important;
+}
+
+// Background color header table
+.bg-blue {
+  background-color: #9db9dc;
+}
+
+.p-confirm-dialog .p-confirm-dialog-message,
+.p-confirm-popup .p-confirm-popup-message {
+  white-space: pre-wrap;
+}
+
+.p-dialog.p-dynamic-dialog {
+  .p-dialog-header {
+    background-color: $dialog-header-bg;
+    color: white;
+    padding: 0.5rem 1rem;
+
+    .p-dialog-header-icon {
+      color: white;
+    }
+
+    .p-dialog-title {
+      font-family: "GE-Inspira-Regular", sans-serif;
+      font-size: 1.5rem;
+    }
+  }
+
+  .p-dialog-content {
+    padding: 0.5rem;
+  }
+}
+
+.p-dialog-mask.p-component-overlay {
+  background-color: rgb(0 0 0 / 30%);
+}
+
+.display-none {
+  display: none !important;
+}
+
+.p-datepicker table td.p-datepicker-today > span {
+  background: none;
+  color: #495057;
+  border-color: transparent;
+}
+
+.p-datepicker-today-to-timezone {
+  background: #ced4da;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+
+  > div {
+    margin-top: 6px;
+  }
+}
+
+// .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+//     white-space: break-spaces !important;
+//     word-break: break-all;
+// }
+
+.p-multiselect .p-multiselect-label {
+  max-width: 300px !important;
+}
+
+.text-break {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  max-width: 300px;
+}
+
+.text-wrap {
+  white-space: pre-wrap;
+  max-width: 300px;
+}
+
+.text-fit-content {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  max-width: fit-content;
+}
+
+// @media screen and (min-width: 1200px) {
+//     body {
+//         zoom: 85%;
+//     }
+// }
+
+// @media screen and (max-width: 1000px) {
+//     body {
+//         zoom: 100%;
+//     }
+// }
+
+.p-accordion-header-link {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.p-field {
+  margin-bottom: 0 !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  padding: 0.5rem !important;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.p-toast-detail {
+  inline-size: 16rem;
+  overflow-wrap: break-word;
+}
+
+#file-empty {
+  justify-content: center;
+  display: flex;
+  border-radius: 10px;
+  margin: 1rem;
+
+  i.upload {
+    font-size: 40px;
+    color: #2196f3;
+  }
+
+  .empty-content-drag-n-drop {
+    width: 100%;
+    height: 100px;
+    border: 1px dashed #584a4a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+
+    .drag-n-drop-text {
+      font-size: 20px;
+    }
+
+    .link-class {
+      color: rgb(0, 0, 238) !important;
+      font-size: 20px !important;
+      cursor: pointer;
+    }
+  }
+}
+
+.p-dialog-member-view-info .p-dialog-content {
+  padding: 0 !important;
+}
+
+body {
+  margin: 0px;
+  overflow: hidden;
+}

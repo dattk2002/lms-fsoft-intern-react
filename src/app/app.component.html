@@ -1,0 +1,24 @@
+<div class="grid">
+  <header style="position: relative; z-index: 1000">
+    <app-navbar></app-navbar>
+  </header>
+  <p-button
+    style="position: absolute; top: 40%; left: -22px; z-index: 111;"
+    type="button"
+    class="mr-2"
+    (click)="visible = true"
+    icon="pi pi-arrow-right"
+  ></p-button>
+  <p-sidebar [(visible)]="visible" [baseZIndex]="10000">
+    <app-sidebar></app-sidebar>
+  </p-sidebar>
+
+  <div class="box-body">
+    <router-outlet></router-outlet>
+  </div>
+
+  <footer style="position: relative; z-index: 1000">
+    Copyright @2022 BA Warrior. All right reserved
+  </footer>
+</div>
+

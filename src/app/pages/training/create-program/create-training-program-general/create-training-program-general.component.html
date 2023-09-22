@@ -1,0 +1,85 @@
+<div class="frame-92">
+  <!-- frame 93 -->
+  <div class="program-container">
+    <div class="program-detail">
+      <div class="component-1">
+        <div class="program-header">
+          <div class="text-program-header">Training program</div>
+          <div class="program-name">
+            <!-- frame 107 -->
+            <div class="devops-foundation">
+              <div class="text-program-name">{{ bigTitle }}</div>
+              <div class="text-inactive">
+                <div class="inactive">Inactive</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="program-meta-data">
+          <div class="text-program-meta-data">
+            <div class="text-program-1">...days</div>
+            <div class="text-program-2">(...hours)</div>
+          </div>
+          <div class="text-day">Modified on 21/06/2022 by Warrior Tran</div>
+        </div>
+      </div>
+      <hr class="hr" />
+      <div class="content">
+        <!-- frame 88  -->
+        <div class="content-title-container">
+          <div class="content-title">
+            <div class="text-title-content">Content</div>
+          </div>
+        </div>
+        <div class="Unit1-day1">
+          <!-- frame 51 -->
+          <div class="select-syllabus">
+            <div class="text-select-syllabus">Select syllabus</div>
+            <!-- frame 65 -->
+            <form [formGroup]="syllabusForm" (ngSubmit)="createForm()">
+              <!-- <input type="text" class="search-syllabus" placeholder="Linux" formControlName="select"/> -->
+              <p-autoComplete
+                class="search-syllabus"
+                formControlName="select"
+                type="text"
+                placeholder="Linux"
+                [suggestions]="filteredTrainings"
+                (completeMethod)="filterCountry($event)"
+              >
+                <ng-template let-program pTemplate="item">
+                  <div>
+                    <h2>{{ program.trainingTitle }}</h2>
+                    <div>
+                      {{ program.trainingDuration.totalDate }} days
+                      {{ program.modified.date }} by
+                      {{ program.modified.author }}
+                    </div>
+                  </div>
+                </ng-template>
+              </p-autoComplete>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- button -->
+    <div class="saving-button">
+      <p-button label="Back" styleClass="btn-back" (click)="Back()"></p-button>
+      <!-- frame 110 -->
+      <div class="other-button">
+        <div class="cancel-button">
+          <a href="#" class="text-cancel">Cancel</a>
+        </div>
+        <form [formGroup]="syllabusForm" (ngSubmit)="createForm()">
+          <!-- Add your form controls here -->
+          <p-button
+            label="Save"
+            styleClass="btn-back"
+            type="submit"
+            (click)="Save()"
+          ></p-button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

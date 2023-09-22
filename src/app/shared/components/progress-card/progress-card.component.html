@@ -1,0 +1,25 @@
+<div [ngClass]="classes" (click)="onClick()">
+    <div class="status-card">
+        <div class="indicator" *ngIf="isShowGroupIndicator">
+            <span class="value"> {{ groupValue }} </span>
+            <span>{{ 'dashboard.groups' }}</span>
+        </div>
+        <div class="indicator" *ngIf="isShowOperationIndicator">
+            <span class="value"> {{ operationValue }} </span>
+            <span>{{ 'dashboard.operations' }}</span>
+        </div>
+    </div>
+    <div [ngClass]="operationClasses" *ngIf="isShowOperationProgress && !isHiddenItem">
+        <p-progressBar
+            [value]="operationPercent"
+            [showValue]="false"
+        >
+        </p-progressBar>
+    </div>
+
+    <ng-container *ngIf="isSelected">
+        <div class="checker">
+            <i class="pi pi-check-circle"></i>
+        </div>
+    </ng-container>
+</div>

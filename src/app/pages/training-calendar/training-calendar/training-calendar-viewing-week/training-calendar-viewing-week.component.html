@@ -1,0 +1,15 @@
+<div class="calendar">
+    <p-calendar
+      [(ngModel)]="date"
+      [style]="{ width: '100%' }"
+      [inputStyle]="{ width: '100%' }"
+      [inline]="true"
+      dateFormat="dd/mm/yy"
+      [minDate]="minDate"
+      [maxDate]="maxDate"
+      selectionMode="range"
+      (onSelect)="selectDateRange($event)"
+      [showWeek]="true"
+    ></p-calendar>
+  </div>
+  

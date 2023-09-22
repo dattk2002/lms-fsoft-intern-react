@@ -1,0 +1,99 @@
+//--NG_DEEP--
+::ng-deep .accordion-general .tab-1 {
+  margin: 4% 0 4% 0;
+  padding: 4% 0 4% 0;
+}
+::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
+  background-color: #2d3748;
+  color: white;
+}
+
+::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link {
+  background-color: #2d3748;
+  color: #dddddd;
+  width: 100%;
+}
+
+::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+  background-color: #2d3748;
+  color: #dddddd;
+}
+::ng-deep .pi-chevron-down:before {
+  display: none;
+}
+::ng-deep .pi-chevron-right:before {
+  display: none;
+}
+
+::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
+  // margin: 10px 0 10px 0;
+  height: 39px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius: 20px;
+}
+
+::ng-deep .p-fieldset {
+  width: 100%;
+  border: none;
+}
+
+::ng-deep .pi-minus:before {
+  display: none;
+}
+
+::ng-deep .pi-plus:before {
+  display: none;
+}
+
+::ng-deep .p-fieldset.p-fieldset-toggleable .p-fieldset-legend a {
+  background-color: #2d3748;
+  color: white;
+  width: 340px;
+  text-align: center;
+}
+
+::ng-deep .p-fieldset .p-fieldset-content {
+  background-color: #8eb1da;
+  width: 340px;
+  border-radius: 0 0 10px 10px;
+}
+
+// ::ng-deep .p-calendar .p-datepicker {
+//   margin-top: %;
+// }
+
+//--TABLE--
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 8px;
+}
+
+td {
+  width: 10%;
+  border-left: 0;
+  border-bottom: 1px solid #dddddd;
+}
+.header-hour {
+  width: 1%;
+  text-align: center;
+}
+
+// tr:nth-child(even) {
+//   background-color: #dddddd;
+// }

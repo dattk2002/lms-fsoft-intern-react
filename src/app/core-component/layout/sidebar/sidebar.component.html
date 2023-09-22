@@ -1,0 +1,13 @@
+<div
+  class="sidebar sidebar-style-2"
+  data-background-color="blue2"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  <app-sidebar-menu
+    [model]="sideNavItems"
+    [navHover]="layoutService._sidebarHover$.value"
+    [navVisible]="layoutService._sideNavVisible$.value"
+  ></app-sidebar-menu>
+  <div class="sidebar-overlay" appToggleSideNav></div>
+</div>

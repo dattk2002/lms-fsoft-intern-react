@@ -1,0 +1,274 @@
+<div class="table-list">
+  <p-table
+    #dt
+    [paginator]="true"
+    [rows]="5"
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[5, 10, 15]"
+    currentPageReportTemplate="Rows per page"
+    class="pcustom"
+    [value]="rows"
+    [tableStyle]="{ 'min-width': '50rem' }"
+  >
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <!-- <th *ngFor="let column of headers" [pSortableColumn]="column">
+          {{ column }}
+          <p-sortIcon field="{{ column }}" class="sort-icon"></p-sortIcon>
+        </th> -->
+        <th pSortableColumn="className">
+          Class
+          <p-sortIcon field="className" class="sortIcon"></p-sortIcon>
+        </th>
+        <th pSortableColumn="classCode">
+          Class Code
+          <p-sortIcon field="classCode"></p-sortIcon>
+        </th>
+        <th pSortableColumn="createdOn">
+          Created On
+          <p-sortIcon field="createdOn"></p-sortIcon>
+        </th>
+        <th pSortableColumn="createdBy">
+          Created By
+          <p-sortIcon field="createdBy"></p-sortIcon>
+        </th>
+        <th pSortableColumn="classDuration">
+          Duration
+          <p-sortIcon field="classDuration"></p-sortIcon>
+        </th>
+        <th pSortableColumn="attendee">
+          Attendee
+          <p-sortIcon field="attendee"></p-sortIcon>
+        </th>
+        <th pSortableColumn="location">
+          Location
+          <p-sortIcon field="location"></p-sortIcon>
+        </th>
+        <th pSortableColumn="fsu">
+          FSU
+          <p-sortIcon field="fsu"></p-sortIcon>
+        </th>
+        <th>More</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-row>
+      <!-- <ng-container
+        *ngIf="
+          row.attendee === 'Fresher' ||
+          row.attendee === 'Intern' ||
+          row.attendee === 'Online Fee-Fresher' ||
+          row.attendee === 'Offline Fee-Fresher' ||
+          row.attendee === '50'
+        "
+      > -->
+      <tr>
+        <td class="name">
+          <a routerLink="[]" (click)="viewDetail(row)">
+            {{ row.className }}
+          </a>
+        </td>
+        <td class="username">
+          <a routerLink="[]" (click)="viewDetail(row)">{{ row.classCode }}</a>
+        </td>
+        <td>
+          <a routerLink="[]" (click)="viewDetail(row)">{{
+            row.createdOn | date : "dd/MM/yy"
+          }}</a>
+        </td>
+        <td>
+          <a routerLink="[]" (click)="viewDetail(row)">{{ row.createdBy }}</a>
+        </td>
+        <td class="status">
+          <div class="status-detail">
+            <a routerLink="[]" (click)="viewDetail(row)">{{
+              row.classDuration.totalDate + " days"
+            }}</a>
+          </div>
+        </td>
+        <td class="table-button">
+          <button
+            *ngIf="row.attendee === 'Intern'"
+            class="intern-button"
+            (click)="changeStatus(row)"
+          >
+            <a routerLink="[]" (click)="viewDetail(row)"> Intern </a>
+          </button>
+          <button
+            *ngIf="row.attendee === 'Fresher'"
+            class="fresher-button"
+            (click)="changeStatus(row)"
+          >
+            <a routerLink="[]" (click)="viewDetail(row)">Fresher</a>
+          </button>
+          <button
+            *ngIf="row.attendee === 'Online fee-fresher'"
+            class="online-fee-fresher-button"
+            (click)="changeStatus(row)"
+          >
+            <a routerLink="[]" (click)="viewDetail(row)">Online fee-fresher</a>
+          </button>
+          <button
+            *ngIf="row.attendee === 'Offline fee-fresher'"
+            class="offline-fee-fresher-button"
+            (click)="changeStatus(row)"
+          >
+            <a routerLink="[]" (click)="viewDetail(row)">Offline fee-fresher</a>
+          </button>
+        </td>
+        <!-- <td class="table-button">
+          <button
+            *ngIf="row.attendee === 'Intern'"
+            class="intern-button"
+            (click)="changeStatus(row)"
+          >
+            <a routerLink="[]" (click)="viewDetail(row)">{{
+                row.attendee
+              }}</a>
+            Intern
+          </button>
+          <button
+            *ngIf="row.attendee === '50'"
+            class="online-fee-fresher-button"
+            (click)="changeStatus(row)"
+          >
+            <a routerLink="[]" (click)="viewDetail(row)">{{
+                row.attendee
+              }}</a>
+            50
+          </button>
+        </td> -->
+
+        <td>
+          <a routerLink="[]" (click)="viewDetail(row)">{{ row.location }}</a>
+        </td>
+
+        <td>
+          <a routerLink="[]" (click)="viewDetail(row)">{{ row.fsu }}</a>
+        </td>
+        <div class="dropdown">
+          <button class="dropbtn">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13 15C14.1046 15 15 14.1046 15 13C15 11.8954 14.1046 11 13 11C11.8954 11 11 11.8954 11 13C11 14.1046 11.8954 15 13 15Z"
+                fill="#285D9A"
+              />
+              <path
+                d="M20 15C21.1046 15 22 14.1046 22 13C22 11.8954 21.1046 11 20 11C18.8954 11 18 11.8954 18 13C18 14.1046 18.8954 15 20 15Z"
+                fill="#285D9A"
+              />
+              <path
+                d="M6 15C7.10457 15 8 14.1046 8 13C8 11.8954 7.10457 11 6 11C4.89543 11 4 11.8954 4 13C4 14.1046 4.89543 15 6 15Z"
+                fill="#285D9A"
+              />
+            </svg>
+          </button>
+          <div class="dropdown-content">
+            <a class="manager">Manage</a>
+            <!-- <a class="dd" href="#">Training material</a> -->
+
+            <!-- <form (submit)="onUpdateTrainingProgram()">
+              <label for="updateId">Training Program ID:</label>
+              <input type="text" id="updateId" [(ngModel)]="updateId">
+              <button type="submit">Update</button>
+            </form> -->
+            <div class="button-text">
+              <button (click)="onDuplicateClass(row.id)">
+                <a><i class="pi pi-clone"></i> Duplicate</a>
+              </button>
+              <p-dialog
+                header=""
+                [(visible)]="displayDuplicateDialog"
+                [modal]="true"
+                [style]="{ width: '25vw' }"
+                [baseZIndex]="10000"
+                [draggable]="false"
+                [resizable]="false"
+              >
+                <p>
+                  Duplicate class successfully!
+                </p>
+              </p-dialog>
+
+              <button (click)="showConfirmDialog()">
+                <a><i class="pi pi-trash"></i> Delete</a>>
+              </button>
+              <div class="form-container">
+                <p-dialog
+                  [(visible)]="displayConfirmDialog"
+                  [modal]="true"
+                  [style]="{ width: '40vw' }"
+                  [baseZIndex]="10000"
+                  [draggable]="false"
+                  [resizable]="false"
+                >
+                  <div class="title-container">
+                    <!-- icon -->
+                    <p>
+                      <i class="pi pi-info-circle"></i> Do you want to delete
+                      this class ?
+                    </p>
+                  </div>
+
+                  <ng-template pTemplate="footer">
+                    <div class="button-confirm">
+                      <p-button
+                        class="no-btn"
+                        label="No"
+                        (click)="hideDialog()"
+                      ></p-button>
+                      <p-button
+                        class="yes-btn"
+                        label="Yes"
+                        (onClick)="onDeleteClass(row.id)"                 
+                      ></p-button>
+                    </div>
+                  </ng-template>
+                </p-dialog>
+              </div>
+              <!-- <p-toast></p-toast>
+              <button pButton pRipple (click)="showToast()" label="Show Toast"></button> -->
+
+              <!-- <a class="dd" href="#">De-activate</a> -->
+              <!-- <button class="dd"><a><i class="pi pi-times"></i> De-activate</a></button> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- <td>
+            <div class="btn-more">
+
+              <button
+                class="button-more"
+                type="button"
+                pButton
+                pRipple
+
+                (click)="menu.toggle($event)"
+              >
+                <i class="fa-solid fa-ellipsis"></i>
+              </button>
+              <p-menu #menu [popup]="true" [model]="items"></p-menu>
+            </div>
+          </td> -->
+      </tr>
+      <!-- </ng-container> -->
+    </ng-template>
+    <!-- <ng-template pTemplate="body" let-product>
+            <tr>
+              <td>{{product.code}}</td>
+              <td>{{product.name}}</td>
+              <td>{{product.category}}</td>
+              <td>{{product.quantity}}</td>
+              <td>{{product.price | currency: 'USD'}}</td>
+          </tr>
+      </ng-template> -->
+  </p-table>
+</div>

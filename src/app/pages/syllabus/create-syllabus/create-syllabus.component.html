@@ -1,0 +1,43 @@
+<!-- <router-outlet></router-outlet> -->
+<!-- Header -->
+<div class="syllabus-detail-container">
+  <div class="title">
+    <h1 class="h1">Create Syllabus</h1>
+  </div>
+  <!-- <div class="progress">
+    <app-progress-bar></app-progress-bar>
+  </div> -->
+
+</div>
+<hr>
+
+<div class="container">
+
+
+  <div class="NPL">
+    <span>Code: NPL</span>
+  </div>
+
+  <div class="Ver">
+    <span>Version: 1.0</span>
+  </div>
+
+</div>
+
+<p-tabView>
+  <p-tabPanel header="General">
+    <app-creat-syllabus-general />
+  </p-tabPanel>
+  <p-tabPanel header="Outline">
+    <app-create-syllabus-outline></app-create-syllabus-outline>
+  </p-tabPanel>
+  <p-tabPanel header=" Others">
+    <app-create-syllabus-others></app-create-syllabus-others>
+  </p-tabPanel>
+  <button (click)="onSubmit()" class="button" type="submit">
+    <a style="color: aliceblue;">Save</a>
+  </button>
+
+</p-tabView>
+
+

@@ -1,0 +1,202 @@
+{
+  "data": {
+    "general": {
+      "id": " 123 ",
+      "program_name ": " C++ ",
+      "createdon": "9/2/2023",
+      "creaedby": "hoangduy",
+      "duration": {
+        "total_day": 4,
+        "total_hours": 12
+      },
+      "status": "Active ",
+      "level": "All Levels",
+      "attendeenumber_percent": 2,
+      "outputstandard": "HS4D",
+      "technicalrequirement": "Trainees’ PCs need to have following software installed & run without any issues: • Microsoft SQL Server 2005 Express • Microsoft Visual Studio 2017 • Microsoft Office 2007 (Visio, Word, PowerPoint)",
+      "couseraobjectives": "This topic is to introduce about C# programming language knowledge; adapt trainees with skills, lessons and practices which is specifically used in the Fsoft projects. In details, after completing the topic, trainees will: - Understand basic concepts of high-level programming languages (keywor)"
+    },
+    "outline": [
+      {
+        "day": 1,
+        "content": [
+          {
+            "unitNum": 1,
+            "unitName": ".NET Introduction",
+            "hours": 30,
+            "lessons": [
+              {
+                "name": ".netintroduction",
+                "outputStandard": "HS4D",
+                "hours": 30,
+                "status": "Online",
+                "deliveryType": "Exam"
+              },
+              {
+                "name": ".netintroduction",
+                "outputStandard": "HS4D",
+                "hours": 30,
+                "status": "Offline",
+                "deliveryType": "Assignment/Lab"
+              }
+
+            ]
+          },
+          {
+            "unitNum": 2,
+            "unitName": ".ngunhubo",
+            "hours": 30,
+            "lessons": [
+              {
+                "name": "dddddddddddddddddddd",
+                "outputStandard": "HS4D",
+                "hours": 30,
+                "status": "Offline",
+                "deliveryType": "Concept/Lecture"
+              }
+
+            ]
+          },
+          {
+            "unitNum": 3,
+            "unitName": "lonquay",
+            "hours": 30,
+            "lessons": [
+              {
+                "name": ".netintroduction",
+                "outputStandard": "HS4D",
+                "hours": 30,
+                "status": "Offline",
+                "deliveryType": "Assignment/Lab"
+              },
+              {
+                "name": "dddddddddddddddddddd",
+                "outputStandard": "HS4D",
+                "hours": 30,
+                "status": "Online",
+                "deliveryType": "Guide/Review"
+              }
+            ]
+          }
+        ],
+        "timeallocation": {
+          "assignment_percent": 54,
+          "concept_percent": 29,
+          "guide_percent": 9,
+          "test_percent": 1,
+          "exam_percent": 6
+        }
+      },
+      {
+        "day": 2,
+        "content": [
+          {
+            "unitNum": 2,
+            "unitName": "java",
+            "hours": 45,
+            "lessons": [
+              {
+                "name": "aaaaaaaaaaa",
+                "outputStandard": "HS4D",
+                "hours": 30,
+                "status": "Offline",
+                "deliveryType": "Test/Quiz"
+              },
+              {
+                "name": "ccccccccccccc",
+                "outputStandard": "HS4D",
+                "hours": 30,
+                "status": "Online",
+                "deliveryType": "Seminar/Workshop"
+              }
+            ]
+
+          }
+        ],
+        "timeallocation": {
+          "assignment_percent": 54,
+          "concept_percent": 29,
+          "guide_percent": 9,
+          "test_percent": 1,
+          "exam_percent": 6
+        }
+      },
+      {
+        "day": 3,
+        "content": [
+          {
+            "unitNum": 3,
+            "unitName": "c#",
+            "hours": 60,
+            "lessons": [
+              {
+                "name": "bbbbbbbbbbb",
+                "outputStandard": "HS4D",
+                "hours": 30,
+                "status": "Offline",
+                "deliveryType": "string"
+              }
+            ]
+          }
+        ],
+        "timeallocation": {
+          "assignment_percent": 54,
+          "concept_percent": 29,
+          "guide_percent": 9,
+          "test_percent": 1,
+          "exam_percent": 6
+        }
+      }
+    ],
+
+    "others": {
+      "assessmentscheme": [
+        {
+          "quiz_percent": 15,
+          "assignment_percent": 15,
+          "final_percent": 70,
+          "finaltheory_percent": 40,
+          "finalpractice_percent": 60,
+          "gpa_percent": 70
+        }
+      ],
+      "trainingdeliveryprinciple": "Only allow each student to retake the test up to 2 times Re-exam the same structure as the Final Test"
+    }
+  },
+
+  "SyllabusList": {
+    "success": true,
+    "data": {
+      "result": [
+        {
+          "title": "Linux",
+          "status": "Active",
+          "detail": "LIN v2.0",
+          "duration": "4 days (12 hours) ",
+          "modified": "Modified on 23/07/2022 by Johny Deep"
+        },
+        {
+          "title": "C#",
+          "status": "Active",
+          "detail": "LIN v2.0",
+          "duration": "4 days (12 hours) ",
+          "modified": "Modified on 23/07/2022 by Johny Deep"
+        },
+        {
+          "title": "Linux",
+          "status": "Inactive",
+          "detail": "LIN v2.0",
+          "duration": "4 days (12 hours) ",
+          "modified": "Modified on 23/07/2022 by Johny Deep"
+        },
+        {
+          "title": "Java",
+          "status": "Active",
+          "detail": "LIN v2.0",
+          "duration": "4 days (12 hours) ",
+          "modified": "Modified on 23/07/2022 by Johny Deep"
+        }
+      ]
+    }
+  }
+}

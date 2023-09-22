@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "name": "python",
+      "code": "python",
+      "createdBy": "admin",
+      "startDate": "2023-03-21T02:19:55.821",
+      "endDate": "2023-03-21T02:19:55.821",
+      "creationDate": "2023-03-21T02:22:31.1635569",
+      "locationName": "ftown3",
+      "branch": "python",
+      "status": "cay thiet",
+      "attendee": "python",
+      "classDuration": {
+        "totalDate": 0,
+        "totalHours": 0
+      }
+    },
+    {
+      "name": ".NET",
+      "code": "CPL_FSOFT_NET_01",
+      "createdBy": "test",
+      "startDate": "2023-02-28T01:59:20.3066667",
+      "endDate": "2023-03-30T01:59:20.3066667",
+      "creationDate": "2023-02-28T01:59:20.3066667",
+      "locationName": "Ftown2",
+      "branch": "stringstring",
+      "status": "Active",
+      "attendee": "50",
+      "classDuration": {
+        "totalDate": 15,
+        "totalHours": 120
+      }
+    },
+    {
+      "name": "JAVA",
+      "code": "CPL_FSOFT_JAVA_01",
+      "createdBy": "test",
+      "startDate": "2023-02-28T01:59:20.3066667",
+      "endDate": "2023-03-30T01:59:20.3066667",
+      "creationDate": "2023-02-28T01:59:20.3066667",
+      "locationName": "Ftown2",
+      "branch": "stringstring",
+      "status": "Active",
+      "attendee": "50",
+      "classDuration": {
+        "totalDate": 15,
+        "totalHours": 120
+      }
+    }
+  ]
+}

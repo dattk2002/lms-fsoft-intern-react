@@ -1,0 +1,79 @@
+form {
+  #attendee-number-input {
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .requirement-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #level-label {
+    font-family: "Inter";
+    font-style: italic;
+    color: black;
+  }
+
+  #requirement {
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    resize: vertical;
+  }
+  label {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    display: inline-block;
+    padding-right: 1rem;
+  }
+  .attendee-number-container {
+    margin-top: 10px;
+  }
+  .requirement-container {
+    margin-top: 10px;
+  }
+  .course-container {
+    margin-top: 10px;
+  }
+  .submit {
+    background: #2d3748;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 25px;
+  }
+
+  .container {
+    display: flex;
+
+    .syllabus-name {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      // position: absolute;
+      // top: 120px;
+    }
+    input {
+      background: #ffffff;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-left: 10px;
+      // top: 120px;
+      // left: 150px;
+      // position: absolute;
+    }
+
+  }
+}

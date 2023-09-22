@@ -1,0 +1,36 @@
+<div class="training-calendar-by-week-container">
+  <div class="container-fluid">
+    <div class="row">
+      <div>
+        <h1 class="h1">Training Calendar</h1>
+      </div>
+      <div class="col-10">
+        <div class="container-fluid mt-4" style="background-color: #ffffff">
+          <div class="row">
+            <div class="col-10 search-container-wrapper" style="display: flex">
+              <app-training-calendar-search-filter
+                class="search-filter"
+              ></app-training-calendar-search-filter>
+            </div>
+            <div class="parent-button">
+              <!-- <app-saving class="button-day" [name]="'Day'" (click)="toggleDay()"></app-saving>
+            <app-saving class="button-week" [name]="'Week'" (click)="toggleWeek()"></app-saving> -->
+
+              <p-button class="button-day" label="Day" [disabled]="true"
+                ><i class="fa-solid fa-calendar-days"></i
+              ></p-button>
+              <p-button
+                class="button-week"
+                label="Week"
+                (onClick)="toggleWeek()"
+                ><i class="fa-solid fa-calendar-week"></i
+              ></p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-training-calendar-viewing></app-training-calendar-viewing>
+    <app-training-calendar-fullcalendar></app-training-calendar-fullcalendar>
+  </div>
+</div>

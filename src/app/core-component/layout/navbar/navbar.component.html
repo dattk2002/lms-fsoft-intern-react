@@ -1,0 +1,11 @@
+<div class="box-logo">
+  <a routerLink="/home"
+    ><img src="assets/images/logo/logo-fpt.png" height="35" width="60"
+  /></a>
+  <a href="/login" *ngIf="token != null" id="logout-btn"
+    >
+    <app-saving [color]="'#E74A3B'" (click)="logout()" [name]="'Logout'"></app-saving>
+    <!-- <button >Log-out</button> -->
+    </a
+  >
+</div>

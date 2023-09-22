@@ -1,0 +1,62 @@
+<app-class-header [bigTitle]="''"></app-class-header>
+
+<div class="create-class-container">
+  <div class="content-container">
+    <div class="top-content-container">
+      <app-create-class-general
+        [viewMode]="'true'"
+        [generalInformation]="generalInformation"
+      ></app-create-class-general>
+      <app-create-class-time-frame
+        [viewMode]="'true'"
+        [selectedDates]="selectedDates"
+      ></app-create-class-time-frame>
+      <app-create-class-attendee
+        [viewMode]="'true'"
+        [attendeeInformation]="generalInformation.attendeesDetail"
+      ></app-create-class-attendee>
+    </div>
+
+    <div class="bottom-content-container">
+      <!-- Display program detail component -->
+      <p-tabView>
+        <p-tabPanel header="Training Program">
+          <app-training-detail-share [trainingProgramId]="programId"></app-training-detail-share>
+        </p-tabPanel>
+        <p-tabPanel header="Attendee list">
+          <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci
+            velit, sed quia non numquam eius modi.
+          </p>
+        </p-tabPanel>
+        <p-tabPanel header="Budget">
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium voluptatum deleniti atque corrupti quos
+            dolores et quas molestias excepturi sint occaecati cupiditate non
+            provident, similique sunt in culpa qui officia deserunt mollitia
+            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
+            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
+            eligendi optio cumque nihil impedit quo minus.
+          </p>
+        </p-tabPanel>
+        <p-tabPanel header="Others">
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium voluptatum deleniti atque corrupti quos
+            dolores et quas molestias excepturi sint occaecati cupiditate non
+            provident, similique sunt in culpa qui officia deserunt mollitia
+            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
+            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
+            eligendi optio cumque nihil impedit quo minus.
+          </p>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+timeonly {
+  $width: 30000px;
+  $height: 17px;
+  $font-family: "Inter";
+  $font-style: normal;
+  $font-weight: 400;
+  $font-size: 14px;
+  $line-height: 17px;
+  $color: #8b8b8b;
+
+  .element {
+    width: $width;
+    height: $height;
+    font-family: $font-family;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+
+    /* Un-modified */
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+}

@@ -1,0 +1,50 @@
+<div class="search-container">
+  <div class="program-meta-data">
+    <form [formGroup]="searchForm" (ngSubmit)="createName()">
+      <div class="body-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          class="search-input"
+          type="text"
+          name="search"
+          formControlName="name"
+          [(ngModel)]="searchText"
+          placeholder="Search by..."
+          (ngModelChange)="searchName()"
+        />
+        <div class="spinning">
+          <app-spin [spinning]="startSpin"></app-spin>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<button class="button-bt" (click)="showBasicDialog()" type="button">
+  <i class="pi pi-filter"></i>
+  {{ name }}
+</button>
+<p-dialog
+  [(visible)]="displayBasic"
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+  [modal]="true"
+>
+  <p>
+    <app-filter [url]="filterUrl"></app-filter>
+  </p>
+
+  <!-- <ng-template pTemplate="footer">
+    <p-button
+        icon="pi pi-times"
+        (click)="displayBasic = false"
+        label="Clear"
+        styleClass="p-button-text"
+      ></p-button>
+      <p-button
+        icon="pi pi-check"
+        (click)="displayBasic = false"
+        label="Search"
+      ></p-button>
+  </ng-template> -->
+</p-dialog>

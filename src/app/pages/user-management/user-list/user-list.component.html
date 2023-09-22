@@ -1,0 +1,268 @@
+<div class="all">
+  <div class="program-list">
+    <div class="frame-93">
+      <div class="frame-95">
+        <div class="frame-98">
+          <div class="program-header">
+            <div class="text-header">User Management</div>
+          </div>
+          <hr class="hr" />
+        </div>
+        <div class="frame-94">
+          <div class="frame-92">
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+              <div class="frame-91">
+                <span>
+                  <input
+                    onchange="searchFunction($event)"
+                    type="text"
+                    placeholder="Search"
+                    class="frame-65"
+                    formControlName="search"
+                  />
+                </span>
+                <div>
+                  <p-button
+                    type="button"
+                    label="Filter"
+                    styleClass="frame-82"
+                    (onClick)="showBasicDialog()"
+                    icon="pi pi-filter"
+                  ></p-button>
+                  <p-dialog
+                    [(visible)]="displayBasic"
+                    [style]="{ width: '50vw' }"
+                    [baseZIndex]="10000"
+                  >
+                    <app-filter></app-filter>
+                  </p-dialog>
+                  <app-filter
+                    [ngClass]="{ 'app-filter-small': !showFilterForm }"
+                    *ngIf="showFilterForm"
+                  ></app-filter>
+                </div>
+              </div>
+            </form>
+            <div class="frame-96">
+              <p-button
+                type="button"
+                label="Import"
+                styleClass="text-import"
+                icon="pi pi-upload"
+                (onClick)="showBasicDialog2()"
+              >
+              </p-button>
+              <p-dialog
+                [(visible)]="displayBasic2"
+                [style]="{ width: '550px', height: '450px' }"
+                [baseZIndex]="10000"
+                [header]="'Import dialog'"
+              >
+                <app-import-dialog></app-import-dialog>
+              </p-dialog>
+              <app-import-dialog
+                [ngClass]="{ 'app-filter-small': !showImportForm }"
+                *ngIf="showImportForm"
+              >
+              </app-import-dialog>
+              <p-button
+                label="Add new"
+                styleClass="text-add"
+                icon="pi pi-plus-circle"
+              ></p-button>
+            </div>
+          </div>
+          <div>
+            <div class="table-list">
+              <p-table
+                #dt
+                [value]="listclasses"
+                [paginator]="true"
+                [rows]="5"
+                [showCurrentPageReport]="true"
+                [rowsPerPageOptions]="[5, 10, 15]"
+                currentPageReportTemplate="Rows per page"
+                class="pcustom"
+                [value]="rows"
+                [tableStyle]="{ 'min-width': '50rem' }"
+              >
+                <ng-template pTemplate="header" let-columns>
+                  <tr>
+                    <!-- <th *ngFor="let column of headers" [pSortableColumn]="column">
+                      {{ column }}
+                      <p-sortIcon field="{{ column }}" class="sort-icon"></p-sortIcon>
+                    </th> -->
+                    <th pSortableColumn="className">
+                      ID
+                      <p-sortIcon field="className"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="classCode">
+                      Fullname
+                      <p-sortIcon field="classCode"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="createdOn">
+                      Email
+                      <p-sortIcon field="createdOn"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="createdBy">
+                      Date of birth
+                      <p-sortIcon field="createdBy"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="classDuration">
+                      Gender
+                      <p-sortIcon field="classDuration"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="attendee">
+                      Level
+                      <p-sortIcon field="attendee"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="location">
+                      Type
+                      <p-sortIcon field="location"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="fsu">
+                      Status
+                      <p-sortIcon field="fsu"></p-sortIcon>
+                    </th>
+                  </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-row>
+                  <ng-container
+                    *ngIf="
+                      row.attendee === 'Fresher' ||
+                      row.attendee === 'Intern' ||
+                      row.attendee === 'Online Fee-Fresher' ||
+                      row.attendee === 'Offline Fee-Fresher' ||
+                      row.attendee === '50'
+                    "
+                  >
+                    <tr>
+                      <td>
+                        <a routerLink="[]" (click)="viewDetail(row)">
+                          {{ row.className }}
+                        </a>
+                      </td>
+                      <td class="username">
+                        <a routerLink="[]" (click)="viewDetail(row)">{{
+                          row.classCode
+                        }}</a>
+                      </td>
+                      <td>
+                        <a routerLink="[]" (click)="viewDetail(row)">{{
+                          row.createdOn | date : "dd/MM/yy"
+                        }}</a>
+                      </td>
+                      <td>
+                        <a routerLink="[]" (click)="viewDetail(row)">{{
+                          row.createdBy
+                        }}</a>
+                      </td>
+                      <td class="status">
+                        <div class="status-detail">
+                          <a routerLink="[]" (click)="viewDetail(row)">{{
+                            row.classDuration.totalDate + " days"
+                          }}</a>
+                        </div>
+                      </td>
+                      <!-- <td>
+                        <button
+                          *ngIf="row.attendee === 'Fresher'"
+                          class="fresher-button"
+                          (click)="changeStatus(row)"
+                        >
+                          Fresher
+                        </button>
+                        <button
+                          *ngIf="row.attendee === 'Intern'"
+                          class="intern-button"
+                          (click)="changeStatus(row)"
+                        >
+                          Intern
+                        </button>
+                        <button
+                          *ngIf="row.attendee === 'Online Fee-Fresher'"
+                          class="online-fee-fresher-button"
+                          (click)="changeStatus(row)"
+                        >
+                          Online Fee-Fresher
+                        </button>
+                        <button
+                          *ngIf="row.attendee === 'Offline Fee-Fresher'"
+                          class="offline-fee-fresher-button"
+                          (click)="changeStatus(row)"
+                        >
+                          Offline Fee-Fresher
+                        </button>
+                      </td> -->
+                      <td class="table-button">
+                        <button
+                          *ngIf="row.attendee === 'Intern'"
+                          class="intern-button"
+                          (click)="changeStatus(row)"
+                        >
+                          <!-- <a routerLink="[]" (click)="viewDetail(row)">{{
+                            row.attendee
+                          }}</a> -->
+                          Intern
+                        </button>
+                        <button
+                          *ngIf="row.attendee === '50'"
+                          class="online-fee-fresher-button"
+                          (click)="changeStatus(row)"
+                        >
+                          <!-- <a routerLink="[]" (click)="viewDetail(row)">{{
+                            row.attendee
+                          }}</a> -->
+                          50
+                        </button>
+                      </td>
+                      <td>
+                        <a routerLink="[]" (click)="viewDetail(row)">{{
+                          row.location
+                        }}</a>
+                      </td>
+
+                      <td>
+                        <a routerLink="[]" (click)="viewDetail(row)">{{
+                          row.fsu
+                        }}</a>
+                      </td>
+
+                      <!-- <td>
+                        <div class="btn-more">
+            
+                          <button
+                            class="button-more"
+                            type="button"
+                            pButton
+                            pRipple
+            
+                            (click)="menu.toggle($event)"
+                          >
+                            <i class="fa-solid fa-ellipsis"></i>
+                          </button>
+                          <p-menu #menu [popup]="true" [model]="items"></p-menu>
+                        </div>
+                      </td> -->
+                    </tr>
+                  </ng-container>
+                </ng-template>
+                <!-- <ng-template pTemplate="body" let-product>
+                        <tr>
+                          <td>{{product.code}}</td>
+                          <td>{{product.name}}</td>
+                          <td>{{product.category}}</td>
+                          <td>{{product.quantity}}</td>
+                          <td>{{product.price | currency: 'USD'}}</td>
+                      </tr>
+                  </ng-template> -->
+              </p-table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navigation-dot"></div>
+  </div>
+</div>

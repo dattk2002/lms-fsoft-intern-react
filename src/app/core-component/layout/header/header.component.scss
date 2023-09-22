@@ -1,0 +1,16 @@
+.dropdown.language {
+    button.nav-link {
+        background: transparent;
+        border: none;
+    }
+
+    .dropdown-menu {
+        min-width: 3rem;
+        max-width: 3rem;
+
+        .dropdown-item {
+            padding: 0.3rem;
+            text-align: center;
+        }
+    }
+}

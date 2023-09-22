@@ -1,0 +1,45 @@
+<div class="background" style="color: black">
+  <form [formGroup]="login" (ngSubmit)="onSubmit()">
+    <div>
+      <h2>FPT Fresh Academy Training Management</h2>
+    </div>
+    <div>
+      <span>
+        If you don’t have the account, please contact
+        <a href="FA.HCM@fsoft.com.vn">FA.HCM@fsoft.com.vn</a>
+      </span>
+    </div>
+    <label for="username"></label>
+    <input type="text" id="userName" name="userName" placeholder="Enter Email" required formControlName="userName" />
+
+    <div *ngIf="login.invalid && login.touched && emailError?.['email']" class="alert alert-danger">
+      Email is wrong format!
+    </div>
+    <!-- <p-button (click)="showBasicDialog()" icon="pi pi-external-link" label="Show"></p-button> -->
+    <p-dialog [(visible)]="displayBasic" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+      [resizable]="false">
+      <p class="m-0">
+        {{ diaLog }}
+      </p>
+      <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="displayBasic = false" label="Ok" styleClass="p-button-text"></p-button>
+      </ng-template>
+    </p-dialog>
+
+    <div *ngIf="emailError?.['required']">Email is required.</div>
+    <label for="password"></label>
+    <input class="password" [type]="changetype ? 'password' : 'text'" id="password" name="password"
+      placeholder="Password" required formControlName="password" />
+    <i [ngClass]="visible ? 'bi bi-eye-slash' : 'bi bi-eye'" (click)="viewpass()" id="togglePassword"></i>
+
+    <a href="" class="button" (click)="onSubmit()">Login</a>
+
+    <div class="forgot">
+      <a routerLink="/login/forgot-password">Forgot password?</a>
+    </div>
+
+    <div class="spinning">
+      <app-spin [spinning]="startSpin"></app-spin>
+    </div>
+  </form>
+</div>

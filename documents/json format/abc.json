@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "data": [
+    {
+      "class_name": "React",
+      "class_code": "HCM23_CPL_React_03",
+      "created_on": "09-03-2023",
+      "created_by": "DatTK",
+      "duration": "12 days",
+      "Attendee": "Intern",
+      "Location": "Ho Chi Minh City",
+      "FSU": "FHM"
+    }
+  ]
+}

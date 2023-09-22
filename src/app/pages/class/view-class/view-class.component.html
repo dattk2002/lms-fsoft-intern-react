@@ -1,0 +1,108 @@
+<app-class-header
+  [smallTitle]="'Training Class'"
+  [bigTitle]="''"
+></app-class-header>
+<div class="view-class-container">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- <div>
+        <h1 class="h1">Training Class</h1>
+      </div> -->
+      <div class="col-10">
+        <div class="container-fluid mt-4" style="background-color: #ffffff">
+          <div class="row-container-fluid">
+            <div class="col-10 search-container-wrapper">
+              <div class="search-container">
+                <div class="program-meta-data">
+                  <form [formGroup]="profileForm" (ngSubmit)="createName()">
+                    <div class="body-search">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      <input
+                        type="text"
+                        class="search"
+                        formControlName="name"
+                        [(ngModel)]="searchText"
+                        placeholder="Search by..."
+                        (ngModelChange)="searchNameClass()"
+                      />
+                      <div class="spinning">
+                        <app-spin [spinning]="startSpin"></app-spin>
+                      </div>
+                      <!-- <p-button
+                      type="submit"
+                      class="btn btn-success"
+                      [disabled]="!profileForm.valid"
+                    ></p-button> -->
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <button
+                class="button-bt"
+                type="button"
+                (click)="showBasicDialogFilter()"
+              >
+                <i class="pi pi-filter"></i>
+
+                {{ name }}
+              </button>
+              <p-dialog
+                [(visible)]="displayBasicFilter"
+                [style]="{ width: '50vw' }"
+                [baseZIndex]="10000"
+                [modal]="true"
+              >
+                <app-filter [url]="filterUrl"></app-filter>
+                <div class="buttons">
+                  <p-button
+                    class="cancel-button"
+                    label="Cancel"
+                    (click)="onReset()"
+                  ></p-button>
+                  <p-button
+                    class="submit-button"
+                    label="Filter"
+                    (click)="onFilter()"
+                  ></p-button>
+                </div>
+              </p-dialog>
+            </div>
+            <div class="parent-button">
+              <button class="p-add" type="button" (click)="addClass()">
+                {{ name2 }}
+                <i class="pi pi-plus-circle"></i>
+              </button>
+              <button
+                class="p-import"
+                type="button"
+                (click)="showBasicDialogImport()"
+              >
+                {{ name1 }}
+                <i class="pi pi-upload"></i>
+              </button>
+              <p-dialog
+                [(visible)]="displayBasicImport"
+                [style]="{ width: '550px', height: '450px' }"
+                [baseZIndex]="10000"
+                [header]="'Import dialog'"
+                [modal]="true"
+              >
+                <app-import-dialog></app-import-dialog>
+              </p-dialog>
+            </div>
+
+            <div class="search-history-container"></div>
+          </div>
+        </div>
+      </div>
+      <app-tablelist [searchText]="searchText" [rows]="classes">
+      </app-tablelist>
+      <div>
+        <nav aria-label="Page navigation example" class="pagination-container">
+          <ul class="pagination justify-content-center"></ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

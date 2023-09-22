@@ -1,0 +1,79 @@
+<!-- <app-progress-bar> -->
+<p id="create_syllabus-testing-json-qqgido"></p>
+
+<form [formGroup]="create_syllabus" (ngSubmit)="onSubmit()">
+  <div>
+    <div class="container">
+      <div class="syllabus-name">
+        <h2>Syllabus Name*</h2>
+      </div>
+
+      <div class="nhap">
+        <input id="attendee-number-input" type="text" formControlName="syllabusName">
+      </div>
+    </div>
+
+    <div class="level-dropdown-container">
+      <label for="level-label">Level</label>
+      <p-dropdown id="level-label" [options]="Level" [(ngModel)]="selectedLevel" placeholder="All Level"
+        optionLabel="level" [showClear]="true" formControlName="level"></p-dropdown>
+    </div>
+    <div class="attendee-number-container">
+      <label for="attendee-number-input">Attendee number(s)</label>
+      <input id="attendee-number-input" class="attendee" type="text" formControlName="atendeeNumbers" />
+    </div>
+  </div>
+  <div class="requirement-container">
+    <label for="requirement-container-input">Technical Requirement(s)</label>
+    <textarea id="requirement" rows="5" formControlName="technicalRequirement"></textarea>
+  </div>
+  <div class="course-container">
+    <label for="">Course Objectives</label>
+    <p-editor [(ngModel)]="htmlEditor" [style]="{ height: '320px' }" formControlName="courseObjectives">
+      <p>Value: {{htmlEditor||'empty'}}</p>
+        <span class="ql-formats">
+          <span class="ql-size ql-picker">
+            <span class="ql-picker-label" tabindex="0" role="button" aria-expanded="false"
+              aria-controls="ql-picker-options-1">
+              <svg viewBox="0 0 18 18">
+                <polygon class="ql-stroke" points="7 11 9 13 11 11 7 11"></polygon>
+                <polygon class="ql-stroke" points="7 7 9 5 11 7 7 7"></polygon>
+              </svg>
+            </span>
+            <span class="ql-picker-options" aria-hidden="true" tabindex="-1" id="ql-picker-options-1">
+              <span tabindex="0" role="button" class="ql-picker-item" data-value="small"></span>
+              <!-- <span tabindex="0" role="button" class="ql-picker-item ql-selected"></span> -->
+              <span tabindex="0" role="button" class="ql-picker-item" data-value="large"></span>
+              <span tabindex="0" role="button" class="ql-picker-item" data-value="huge"></span>
+            </span>
+          </span>
+
+          <button type="button" class="ql-bold" aria-label="Bold"></button>
+          <button type="button" class="ql-italic" aria-label="Italic"></button>
+          <button type="button" class="ql-underline" aria-label="Underline"></button>
+          <button type="button" class="ql-image" aria-label="Image"></button>
+          <select class="ql-align" [title]="'Aligment'">
+            <option selected></option>
+            <option value="center"></option>
+            <option value="right"></option>
+            <option value="justify"></option>
+          </select>
+
+          <select class="ql-color" [title]="'Char color'"></select>
+
+          <button type="button" class="ql-strike" aria-label="Strike"></button>
+          <button type="button" class="ql-code-block" aria-label="CodeBlock"></button>
+          <button type="button" class="ql-blockquote ql-active" aria-label="Blockquote"></button>
+          <button type="button" class="ql-list" value="ordered" aria-label="Order"></button>
+          <button type="button" class="ql-list" value="bullet" aria-label="Bullet"></button>
+          <button type="button" class="ql-link" aria-label="Link"></button>
+        </span>
+
+    </p-editor>
+  </div>
+  <!-- <div>
+    <button (click)="onSubmit()" type="submit" class="submit">
+      <a style="color: aliceblue;">Next</a>
+    </button>
+  </div> -->
+</form>

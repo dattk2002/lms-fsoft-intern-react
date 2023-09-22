@@ -1,0 +1,50 @@
+<div class="background" style="color: black">
+  <form [formGroup]="email" (ngSubmit)="onSubmit()">
+    <div>
+      <h2>Identify email</h2>
+    </div>
+    <div>
+      <address>
+        If you don’t have the account, please contact
+        <a href="FA.HCM@fsoft.com.vn">FA.HCM@fsoft.com.vn</a>
+      </address>
+    </div>
+
+    <label for="username"></label>
+    <div class="_ngcontent-ome-c16">
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter Email"
+        required
+        formControlName="email"
+      />
+
+      <div
+        *ngIf="email.invalid && email.touched && emailError?.['email']"
+        class="alert alert-danger"
+      >
+        Email is wrong format!
+      </div>
+
+      <button (click)="onSubmit()" type="submit">Send</button>
+    </div>
+    <div class="spinning">
+      <app-spin [spinning]="startSpin"></app-spin>
+    </div>
+    <p-dialog [(visible)]="displayBasic" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+    [resizable]="false">
+    <p class="m-0">
+      {{ diaLog }}
+    </p>
+    <ng-template pTemplate="footer">
+      <p-button icon="pi pi-check" (click)="displayBasic = false" label="Ok" styleClass="p-button-text"></p-button>
+    </ng-template>
+  </p-dialog>
+  </form>
+  <p
+    id="login-testing-json-qqgido"
+    style="color: black; position: absolute"
+  ></p>
+</div>

@@ -1,0 +1,24 @@
+
+<p-table>
+  <ng-template pTemplate="header" >
+    <tr>
+      <th>Role name</th>
+      <th>Syllabus</th>
+      <th>Training program</th>
+      <th>Class</th>
+      <th>Learning marterial</th>
+      <th>User</th>
+    </tr>
+    <tr *ngFor="let roles of role">
+      <td>{{roles}}</td>
+      <td *ngFor="let permission of permissions">
+       
+      </td>
+    </tr>
+  </ng-template>
+
+</p-table>
+<div>
+  <app-saving></app-saving>>
+</div>
+

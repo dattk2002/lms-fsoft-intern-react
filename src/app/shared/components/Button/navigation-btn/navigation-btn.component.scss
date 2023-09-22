@@ -1,0 +1,46 @@
+$navi-open-border-color: #9747FF;
+$navi-open-border-width: 1px;
+$navi-open-border-style: dashed;
+$navi-open-border-radius: 5px;
+$navi-open-padding: 20px;
+$navi-open-gap: 20px;
+$navi-open-width: 108px;
+$navi-open-height: 64px;
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.navi_open {
+  box-sizing: border-box;
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #FFFFFF;
+  padding: $navi-open-padding;
+  gap: $navi-open-gap;
+  width: $navi-open-width;
+  height: $navi-open-height;
+  border: $navi-open-border-width $navi-open-border-style $navi-open-border-color;
+  border-radius: $navi-open-border-radius;
+  order: 2;
+}
+
+.pi-chevron-down {
+  position: relative;
+  left: 0;
+  transform: rotate(0deg);
+  background: #FFFFFF;
+  order: 1;
+}
+
+.pi-chevron-left {
+  position: relative;
+  right: 0;
+  transform: rotate(0deg);
+  background: #FFFFFF;
+  order: 3;
+
+}
